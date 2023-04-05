@@ -1,0 +1,1119 @@
+
+<!DOCTYPE html>
+<html lang="en,zh-cn,default">
+    
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Goddess Unknown">
+    <title>Records of 4/7 to 4/9, 2018 - Goddess Unknown</title>
+    <meta name="author" content="NoirGif">
+    
+    
+        <link rel="icon" href="https://nir.moe/assets/images/neptune.ico">
+    
+    
+        
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+        
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"NoirGif","sameAs":["https://github.com/noirgif"],"image":"https://www.gravatar.com/avatar/156087375592d08ad65a6512cae76add"},"articleBody":"Records for 4-5 and 4-6\nDancing disco at the cementry.\nAbout Mathematica\nMathematica 11 could not be started after a freetype upgrade.\nWhen run in command line, it emits an error like this.\nAccording to the gentoo forum site. Mathematica has its own libraries, and it calls the system library of freetype.\nForcing Mathematica to use the system library by removing libfreetype.so.6 and libz.so.1 in $&#123;TopDirectory&#125;/SystemFiles/Libraries/Linux-x86-64 could solve the problem.\nAbout R\nTo do a linear fit by this:\nx &lt;- c(...)y &lt;- c(...)fit &lt;- lm(y ~ x)\nThe one who wrote this article fell asleep halfway…\nRec 4.8\nComputing Method\nIf f(x) satisfies:\n\n\nf(x)∈[a,b],x∈[a,b]f(x) \\in [a, b], x \\in [a, b]\n\n\nf′f&#x27; is Lipschitz continuous with some K&lt;1K &lt; 1.\n\n\nThen there exists a unique fixed point of f in [a,b][a, b].\nExistence: intermediate value theorem.\nUniqueness: reductio ad absurdum.\nNewton’s method:\nTo find XX s.t. F(X)=0F(X) = 0.\nFirst X=X0X=X_0\nΔX0=(∂F∂X∣X=X0)′F(X0)\\Delta X_0 = \\left(\\left.\\frac{\\partial F}{\\partial X}\\right|_{X=X_0}\\right)^{&#x27;}F(X_0) \nX1=X0+ΔX0X_1=X_0+\\Delta X_0 \nLikewise,\nX2=X1+ΔX1X_2=X_1+\\Delta X_1\n…\nWhere ∂F∂X\\frac{\\partial F}{\\partial X} is the Jacobian matrix of FF.\nFacts about Mozilla\n\nIt developed Thunderbird, a program for emails, feeds, and IM and so on. And now Thunderbird is abandoned.\n\nFirefox\nIt is said starting firefox with env MOZ_USE_XINPUT2=1 firefox enables scrolling with a finger. Not working now.\nThe bugzilla page suggests there should be a --enable-default-toolkit=cairo-gtk3 in the configure options shown in about:buildconfig.\nWorks now after upgrading GTK. Why.\nFirefox OS\nAnother abandoned project is Firefox OS. Refer to this post.\n\n\nStarting point: Boot to Gecko(B2G), push the envelop of the web\n\nArchitecture:\n\nGonk: Open Linux kernel and drivers\nGecko: Web runtime with open Web APIs\nGaia: User interface with HTML5-based Web content\n\n\n\n\n\nFirefox OS 1.0\n\nImitate what already existed\nInvented a lot of APIs to talk to hardware of a smartphone from Javascript(that wouldn’t come into standards)\nIntroduced packaged apps to Gecko to achieve both the offline(run apps without Internet connection) and security requirements(to secure privileged functions like calling and texting messages).\n\nPackaged apps got no URLs and have to be signed by a central authority to say they are safe. -&gt; Against the web.\n\n\n\n\n\nFirefox OS 1.x\n\nJust chasing the coat tails of Android\n\n\n\nDifferentiation\n\nAffordable phones -&gt; 1.3t\n\n$25 smartphone: mostly done by Taipei office\n\n\nWeb -&gt; 2.0\n\nHaida: blur the line between apps and websites\nOvershadowed by feature requests from venders\n\n\n\n\n\n3.0 -&gt; 2.5\nCome to stall and dead in the end.\n\n\nRec 4.9\nComputer Architecture\nRefer to Computer Architecture: A Quantitative Approach\nOptimization of Cache Performance\n\nNonblocking Caches to Increase Cache Bandwidth\n\nPipelined computers that allow out-of-order execution will benefit from this kind of  cache which can supply cache hits even during a miss.\n\nMultibanked Cache\n\n\n\n\nBank 1\nBank 2\nBank 3\nBank 4\n\n\n\n\n0\n1\n2\n3\n\n\n4\n5\n6\n7\n\n\n8\n9\n10\n11\n\n\n12\n13\n14\n15\n\n\n\nIncrease bandwidth.\n\n\nCompiler\n\n\nPrefetching\n\n\nProgramming Languages\nStill, refer to Standford’s cs242.\nExistential types\nInterface: specify what a type should be able to do, regardless of the implementation\nImplementation: concretize the interface by showing how a type can implement the interface\nIt has two kinds of operations: pack and unpack.\nPacking is the introduction of an implementation(see More monads in OCaml).\nFor example, this is an example of a monad interface:\nmodule type M = sig    type _ t    val pure : &#x27;a -&gt; &#x27;a t    val bind : (&#x27;a -&gt; &#x27;b t) -&gt; &#x27;a t -&gt; &#x27;b tend;;\nAnd an implementation of it:\nmodule Option:M = structtype &#x27;a t = Nothing | Just of &#x27;alet pure x = Just xlet bind f x = match x with| Just y -&gt; f y| Nothing -&gt; Nothingend;;\nIt’s an ugly example, but the point is, the detail about Option.t is erased, with only the interface(pure, bind) left.\nutop # Option.pure 3;;- : int Option.t = &lt;abstr&gt;\nThe implementation, Just 3 is not available here, and we cannot use Just to create a Option.t as well. Wait … shit.\nForget about monads, let’s go with another example:\nmodule type Stack = sig    type _ t    val create : unit -&gt; &#x27;a t    val push : &#x27;a t -&gt; &#x27;a -&gt; &#x27;a t    val pop : &#x27;a t -&gt; &#x27;a t * &#x27;a option    val empty : &#x27;a t -&gt; boolend;;\nAnd an implementation by list here:\nmodule LStack : Stack = struct    type &#x27;a t = &#x27;a list    let create = fun () -&gt; []    let push s x = x::s    let pop x = match x with        |x::xs -&gt; xs, Some x        |[] -&gt; [], None    let empty x = match x with        |x::xs -&gt; false        |[] -&gt; trueend;;\nEverything works fine without the knowledge that LStack uses list for the stack. Say you create a new stack using LStack.create, there is no way for you to use it as a list, though it is one.\nutop # let mystack = LStack.create ();;val mystack : &#x27;_a LStack.t = &lt;abstr&gt;utop # assert(mystack=[]);;Error: This expression has type &#x27;a list but an expression was expected of type         &#x27;b LStack.t\nThat’s abstraction in a nutshell.\nThe existential type is like this: ∗S,t:∃X,T{*S, t} : {\\exists X, T} means that type t, coupled with implementation S, makes a package that have an abstract type X with signature T. For the LStack, the analogy would be:\n∗list∼∗S{create=⋯ ,push=⋯ ,pop=⋯ }∼t{create:∀a.unit→X[a], push:∀a.X[a]→a→X[a], pop:∀a.X[a]→X[a]∗option[a]}∼T\n*list \\sim *S\\\\\n\\{create = \\cdots, push = \\cdots, pop = \\cdots\\} \\sim t\\\\\n\\{create : \\forall a.unit \\rightarrow X[a],\\ push : \\forall a.X[a] \\rightarrow a \\rightarrow  X[a],\\ pop : \\forall a.X[a] \\rightarrow X[a] * option[a]\\}\\sim T\n\nAnd there is the pack operation, which erases one or more types and introduces an implementation:\nΓ⊢t:[X→U]TΓ⊢{∗U,t} as {∃X,T}:{∃X,T}\\frac{\\Gamma \\vdash t : [X\\rightarrow U]T}{\\Gamma \\vdash \\{*U, t\\}\\ as\\ \\{\\exists X, T\\} : \\{\\exists X, T\\}} \nMisc\n\n愛されたくて偽って　もっともっと自然に笑えばいいかな\n\n","dateCreated":"2018-04-10T15:12:01+00:00","dateModified":"2023-04-05T05:34:52+00:00","datePublished":"2018-04-10T15:12:01+00:00","description":"","headline":"Records of 4/7 to 4/9, 2018","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://nir.moe/posts/rec-4-7-2018/"},"publisher":{"@type":"Organization","name":"NoirGif","sameAs":["https://github.com/noirgif"],"image":"https://www.gravatar.com/avatar/156087375592d08ad65a6512cae76add","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/156087375592d08ad65a6512cae76add"}},"url":"https://nir.moe/posts/rec-4-7-2018/","keywords":"diary"}</script>
+    <meta name="description" content="Records for 4-5 and 4-6 Dancing disco at the cementry. About Mathematica Mathematica 11 could not be started after a freetype upgrade. When run in command line, it emits an error like this. According">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Records of 4&#x2F;7 to 4&#x2F;9, 2018">
+<meta property="og:url" content="https://nir.moe/posts/rec-4-7-2018/index.html">
+<meta property="og:site_name" content="Goddess Unknown">
+<meta property="og:description" content="Records for 4-5 and 4-6 Dancing disco at the cementry. About Mathematica Mathematica 11 could not be started after a freetype upgrade. When run in command line, it emits an error like this. According">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-04-10T15:12:01.000Z">
+<meta property="article:modified_time" content="2023-04-05T05:34:52.207Z">
+<meta property="article:author" content="NoirGif">
+<meta property="article:tag" content="diary">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/2b3dc29544c9a208eb5bb88773efbfec?s=640"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/style-tmm15uo0bq6eabvwocvhspggawqy0ld33fbflaeb867kiiv7ochjx0qnolxm.min.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+    <!-- Decap CMS -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+    <body>
+        <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            Goddess Unknown
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+            <img class="header-picture" src="https://www.gravatar.com/avatar/2b3dc29544c9a208eb5bb88773efbfec?s=90" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a
+                    href="/#about"
+                    aria-label="Read more about the author"
+                >
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/2b3dc29544c9a208eb5bb88773efbfec?s=110" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">NoirGif</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>A progamer.<div id="snow-bringer" style="cursor: pointer;"> (click me to see some <i class="far fa-snowflake"></i>)</div></p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-archives"
+                            
+                            rel="noopener"
+                            title="Archives"
+                        >
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link open-algolia-search"
+                            href="#search"
+                            
+                            rel="noopener"
+                            title="Search"
+                        >
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/about"
+                            
+                            rel="noopener"
+                            title="About"
+                        >
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/links"
+                            
+                            rel="noopener"
+                            title="友情链接"
+                        >
+                        <i class="sidebar-button-icon fa fa-link" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">友情链接</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/noirgif"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/rss-all.xml"
+                            
+                            rel="noopener"
+                            title="RSS"
+                        >
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Records of 4/7 to 4/9, 2018
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-04-10T15:12:01+00:00">
+	
+		    Apr 10, 2018
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h2 id="Records-for-4-5-and-4-6">Records for 4-5 and 4-6</h2>
+<p>Dancing disco at the cementry.</p>
+<h2 id="About-Mathematica">About Mathematica</h2>
+<p>Mathematica 11 could not be started after a freetype upgrade.</p>
+<p>When run in command line, it emits an error like <a target="_blank" rel="noopener" href="https://bugs.archlinux.org/task/57948">this</a>.</p>
+<p>According to <a target="_blank" rel="noopener" href="https://forums.gentoo.org/viewtopic-p-8198000.html?sid=ab27c1ca8e1927691858595185e18284">the gentoo forum site</a>. Mathematica has its own libraries, and it calls the system library of freetype.</p>
+<p>Forcing Mathematica to use the system library by removing <code>libfreetype.so.6</code> and <code>libz.so.1</code> in <code>$&#123;TopDirectory&#125;/SystemFiles/Libraries/Linux-x86-64</code> could solve the problem.</p>
+<h2 id="About-R">About R</h2>
+<p>To do a linear fit by this:</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">x <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span>...<span class="punctuation">)</span></span><br><span class="line">y <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span>...<span class="punctuation">)</span></span><br><span class="line">fit <span class="operator">&lt;-</span> lm<span class="punctuation">(</span>y <span class="operator">~</span> x<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h2 id="The-one-who-wrote-this-article-fell-asleep-halfway…">The one who wrote this article fell asleep halfway…</h2>
+<h1>Rec 4.8</h1>
+<h2 id="Computing-Method">Computing Method</h2>
+<p>If f(x) satisfies:</p>
+<ol>
+<li>
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>∈</mo><mo stretchy="false">[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">]</mo><mo separator="true">,</mo><mi>x</mi><mo>∈</mo><mo stretchy="false">[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">f(x) \in [a, b], x \in [a, b]</annotation></semantics></math></span>
+</li>
+<li>
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow><annotation encoding="application/x-tex">f&#x27;</annotation></semantics></math></span> is Lipschitz continuous with some <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">K &lt; 1</annotation></semantics></math></span>.
+</li>
+</ol>
+<p>Then there exists a unique fixed point of f in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[a, b]</annotation></semantics></math></span>.</p>
+<p>Existence: intermediate value theorem.</p>
+<p>Uniqueness: reductio ad absurdum.</p>
+<p>Newton’s method:</p>
+<p>To find <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span> s.t. <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">F(X) = 0</annotation></semantics></math></span>.</p>
+<p>First <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><msub><mi>X</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">X=X_0</annotation></semantics></math></span></p>
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>X</mi><mn>0</mn></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><msub><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>F</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>X</mi></mrow></mfrac><mo fence="true">∣</mo></mrow><mrow><mi>X</mi><mo>=</mo><msub><mi>X</mi><mn>0</mn></msub></mrow></msub><mo fence="true">)</mo></mrow><msup><mrow></mrow><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></msup><mi>F</mi><mo stretchy="false">(</mo><msub><mi>X</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta X_0 = \left(\left.\frac{\partial F}{\partial X}\right|_{X=X_0}\right)^{&#x27;}F(X_0) </annotation></semantics></math></span>
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>=</mo><msub><mi>X</mi><mn>0</mn></msub><mo>+</mo><mi mathvariant="normal">Δ</mi><msub><mi>X</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">X_1=X_0+\Delta X_0 </annotation></semantics></math></span>
+<p>Likewise,</p>
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mn>2</mn></msub><mo>=</mo><msub><mi>X</mi><mn>1</mn></msub><mo>+</mo><mi mathvariant="normal">Δ</mi><msub><mi>X</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">X_2=X_1+\Delta X_1</annotation></semantics></math></span>
+<p>…</p>
+<p>Where <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>F</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>X</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\partial F}{\partial X}</annotation></semantics></math></span> is the Jacobian matrix of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span>.</p>
+<h2 id="Facts-about-Mozilla">Facts about Mozilla</h2>
+<ul>
+<li>It developed Thunderbird, a program for emails, feeds, and IM and so on. And now Thunderbird is abandoned.</li>
+</ul>
+<h3 id="Firefox">Firefox</h3>
+<p>It is said starting firefox with <code>env MOZ_USE_XINPUT2=1 firefox</code> enables scrolling with a finger. Not working now.</p>
+<p>The <a target="_blank" rel="noopener" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1268599#c10">bugzilla page</a> suggests there should be a <code>--enable-default-toolkit=cairo-gtk3</code> in the configure options shown in <code>about:buildconfig</code>.</p>
+<p>Works now after upgrading GTK. Why.</p>
+<h3 id="Firefox-OS">Firefox OS</h3>
+<p>Another abandoned project is Firefox OS. Refer to <a target="_blank" rel="noopener" href="https://medium.com/@bfrancis/the-story-of-firefox-os-cb5bf796e8fb">this post</a>.</p>
+<ul>
+<li>
+<p>Starting point: Boot to Gecko(B2G), push the envelop of the web</p>
+<ul>
+<li>Architecture:
+<ul>
+<li>Gonk: Open Linux kernel and drivers</li>
+<li>Gecko: Web runtime with open Web APIs</li>
+<li>Gaia: User interface with HTML5-based Web content</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Firefox OS 1.0</p>
+<ul>
+<li>Imitate what already existed</li>
+<li>Invented a lot of APIs to talk to hardware of a smartphone from Javascript(that wouldn’t come into standards)</li>
+<li>Introduced packaged apps to Gecko to achieve both the offline(run apps without Internet connection) and security requirements(to secure privileged functions like calling and texting messages).
+<ul>
+<li>Packaged apps got no URLs and have to be signed by a central authority to say they are safe. -&gt; Against the web.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Firefox OS 1.x</p>
+<ul>
+<li>Just chasing the coat tails of Android</li>
+</ul>
+</li>
+<li>
+<p>Differentiation</p>
+<ul>
+<li>Affordable phones -&gt; 1.3t
+<ul>
+<li>$25 smartphone: mostly done by Taipei office</li>
+</ul>
+</li>
+<li>Web -&gt; 2.0
+<ul>
+<li>Haida: blur the line between apps and websites</li>
+<li>Overshadowed by feature requests from venders</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>3.0 -&gt; 2.5
+Come to stall and dead in the end.</p>
+</li>
+</ul>
+<h1>Rec 4.9</h1>
+<h2 id="Computer-Architecture">Computer Architecture</h2>
+<p>Refer to Computer Architecture: A Quantitative Approach</p>
+<h3 id="Optimization-of-Cache-Performance">Optimization of Cache Performance</h3>
+<ol>
+<li>Nonblocking Caches to Increase Cache Bandwidth</li>
+</ol>
+<p>Pipelined computers that allow out-of-order execution will benefit from this kind of  cache which can supply cache hits even during a miss.</p>
+<ol start="2">
+<li>Multibanked Cache</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Bank 1</th>
+<th>Bank 2</th>
+<th>Bank 3</th>
+<th>Bank 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+<tr>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<p>Increase bandwidth.</p>
+<ol start="3">
+<li>
+<p>Compiler</p>
+</li>
+<li>
+<p>Prefetching</p>
+</li>
+</ol>
+<h2 id="Programming-Languages">Programming Languages</h2>
+<p>Still, refer to <a href="cs242.stanford.edu">Standford’s cs242</a>.</p>
+<h3 id="Existential-types">Existential types</h3>
+<p>Interface: specify what a type should be able to do, regardless of the implementation</p>
+<p>Implementation: concretize the interface by showing how a type can implement the interface</p>
+<p>It has two kinds of operations: pack and unpack.</p>
+<p>Packing is the introduction of an implementation(see <a target="_blank" rel="noopener" href="http://blog.haberkucharsky.com/technology/2015/07/21/more-monads-in-ocaml.html">More monads in OCaml</a>).</p>
+<p>For example, this is an example of a monad interface:</p>
+<figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> <span class="keyword">type</span> <span class="type">M</span> = <span class="keyword">sig</span></span><br><span class="line">    <span class="keyword">type</span> _ t</span><br><span class="line">    <span class="keyword">val</span> pure : <span class="symbol">&#x27;a</span> -&gt; <span class="symbol">&#x27;a</span> t</span><br><span class="line">    <span class="keyword">val</span> bind : (<span class="symbol">&#x27;a</span> -&gt; <span class="symbol">&#x27;b</span> t) -&gt; <span class="symbol">&#x27;a</span> t -&gt; <span class="symbol">&#x27;b</span> t</span><br><span class="line"><span class="keyword">end</span>;;</span><br></pre></td></tr></table></figure>
+<p>And an implementation of it:</p>
+<figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> <span class="type">Option</span>:<span class="type">M</span> = <span class="keyword">struct</span></span><br><span class="line"><span class="keyword">type</span> <span class="symbol">&#x27;a</span> t = <span class="type">Nothing</span> | <span class="type">Just</span> <span class="keyword">of</span> <span class="symbol">&#x27;a</span></span><br><span class="line"><span class="keyword">let</span> pure x = <span class="type">Just</span> x</span><br><span class="line"><span class="keyword">let</span> bind f x = <span class="keyword">match</span> x <span class="keyword">with</span></span><br><span class="line">| <span class="type">Just</span> y -&gt; f y</span><br><span class="line">| <span class="type">Nothing</span> -&gt; <span class="type">Nothing</span></span><br><span class="line"><span class="keyword">end</span>;;</span><br></pre></td></tr></table></figure>
+<p>It’s an ugly example, but the point is, the detail about Option.t is erased, with only the interface(pure, bind) left.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">utop # Option.pure 3;;</span><br><span class="line">- : int Option.t = &lt;abstr&gt;</span><br></pre></td></tr></table></figure>
+<p>The implementation, Just 3 is not available here, and we cannot use Just to create a Option.t as well. Wait … shit.</p>
+<p>Forget about monads, let’s go with another example:</p>
+<figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> <span class="keyword">type</span> <span class="type">Stack</span> = <span class="keyword">sig</span></span><br><span class="line">    <span class="keyword">type</span> _ t</span><br><span class="line">    <span class="keyword">val</span> create : <span class="built_in">unit</span> -&gt; <span class="symbol">&#x27;a</span> t</span><br><span class="line">    <span class="keyword">val</span> push : <span class="symbol">&#x27;a</span> t -&gt; <span class="symbol">&#x27;a</span> -&gt; <span class="symbol">&#x27;a</span> t</span><br><span class="line">    <span class="keyword">val</span> pop : <span class="symbol">&#x27;a</span> t -&gt; <span class="symbol">&#x27;a</span> t * <span class="symbol">&#x27;a</span> option</span><br><span class="line">    <span class="keyword">val</span> empty : <span class="symbol">&#x27;a</span> t -&gt; <span class="built_in">bool</span></span><br><span class="line"><span class="keyword">end</span>;;</span><br></pre></td></tr></table></figure>
+<p>And an implementation by list here:</p>
+<figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> <span class="type">LStack</span> : <span class="type">Stack</span> = <span class="keyword">struct</span></span><br><span class="line">    <span class="keyword">type</span> <span class="symbol">&#x27;a</span> t = <span class="symbol">&#x27;a</span> <span class="built_in">list</span></span><br><span class="line">    <span class="keyword">let</span> create = <span class="keyword">fun</span> <span class="literal">()</span> -&gt; <span class="literal">[]</span></span><br><span class="line">    <span class="keyword">let</span> push s x = x::s</span><br><span class="line">    <span class="keyword">let</span> pop x = <span class="keyword">match</span> x <span class="keyword">with</span></span><br><span class="line">        |x::xs -&gt; xs, <span class="type">Some</span> x</span><br><span class="line">        |<span class="literal">[]</span> -&gt; <span class="literal">[]</span>, <span class="type">None</span></span><br><span class="line">    <span class="keyword">let</span> empty x = <span class="keyword">match</span> x <span class="keyword">with</span></span><br><span class="line">        |x::xs -&gt; <span class="literal">false</span></span><br><span class="line">        |<span class="literal">[]</span> -&gt; <span class="literal">true</span></span><br><span class="line"><span class="keyword">end</span>;;</span><br></pre></td></tr></table></figure>
+<p>Everything works fine without the knowledge that <code>LStack</code> uses list for the stack. Say you create a new stack using <code>LStack.create</code>, there is no way for you to use it as a list, though it is one.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">utop # let mystack = LStack.create ();;</span><br><span class="line">val mystack : &#x27;_a LStack.t = &lt;abstr&gt;</span><br><span class="line">utop # assert(mystack=[]);;</span><br><span class="line">Error: This expression has type &#x27;a list but an expression was expected of type</span><br><span class="line">         &#x27;b LStack.t</span><br></pre></td></tr></table></figure>
+<p>That’s abstraction in a nutshell.</p>
+<p>The existential type is like this: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo>∗</mo><mi>S</mi><mo separator="true">,</mo><mi>t</mi></mrow><mo>:</mo><mrow><mi mathvariant="normal">∃</mi><mi>X</mi><mo separator="true">,</mo><mi>T</mi></mrow></mrow><annotation encoding="application/x-tex">{*S, t} : {\exists X, T}</annotation></semantics></math></span> means that type t, coupled with implementation S, makes a package that have an abstract type X with signature T. For the <code>LStack</code>, the analogy would be:</p>
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∗</mo><mi>l</mi><mi>i</mi><mi>s</mi><mi>t</mi><mo>∼</mo><mo>∗</mo><mi>S</mi><mspace linebreak="newline"></mspace><mo stretchy="false">{</mo><mi>c</mi><mi>r</mi><mi>e</mi><mi>a</mi><mi>t</mi><mi>e</mi><mo>=</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><mi>p</mi><mi>u</mi><mi>s</mi><mi>h</mi><mo>=</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><mi>p</mi><mi>o</mi><mi>p</mi><mo>=</mo><mo>⋯</mo><mtext> </mtext><mo stretchy="false">}</mo><mo>∼</mo><mi>t</mi><mspace linebreak="newline"></mspace><mo stretchy="false">{</mo><mi>c</mi><mi>r</mi><mi>e</mi><mi>a</mi><mi>t</mi><mi>e</mi><mo>:</mo><mi mathvariant="normal">∀</mi><mi>a</mi><mi mathvariant="normal">.</mi><mi>u</mi><mi>n</mi><mi>i</mi><mi>t</mi><mo>→</mo><mi>X</mi><mo stretchy="false">[</mo><mi>a</mi><mo stretchy="false">]</mo><mo separator="true">,</mo><mtext> </mtext><mi>p</mi><mi>u</mi><mi>s</mi><mi>h</mi><mo>:</mo><mi mathvariant="normal">∀</mi><mi>a</mi><mi mathvariant="normal">.</mi><mi>X</mi><mo stretchy="false">[</mo><mi>a</mi><mo stretchy="false">]</mo><mo>→</mo><mi>a</mi><mo>→</mo><mi>X</mi><mo stretchy="false">[</mo><mi>a</mi><mo stretchy="false">]</mo><mo separator="true">,</mo><mtext> </mtext><mi>p</mi><mi>o</mi><mi>p</mi><mo>:</mo><mi mathvariant="normal">∀</mi><mi>a</mi><mi mathvariant="normal">.</mi><mi>X</mi><mo stretchy="false">[</mo><mi>a</mi><mo stretchy="false">]</mo><mo>→</mo><mi>X</mi><mo stretchy="false">[</mo><mi>a</mi><mo stretchy="false">]</mo><mo>∗</mo><mi>o</mi><mi>p</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo stretchy="false">[</mo><mi>a</mi><mo stretchy="false">]</mo><mo stretchy="false">}</mo><mo>∼</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">
+*list \sim *S\\
+\{create = \cdots, push = \cdots, pop = \cdots\} \sim t\\
+\{create : \forall a.unit \rightarrow X[a],\ push : \forall a.X[a] \rightarrow a \rightarrow  X[a],\ pop : \forall a.X[a] \rightarrow X[a] * option[a]\}\sim T
+</annotation></semantics></math></span>
+<p>And there is the pack operation, which erases one or more types and introduces an implementation:</p>
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi mathvariant="normal">Γ</mi><mo>⊢</mo><mi>t</mi><mo>:</mo><mo stretchy="false">[</mo><mi>X</mi><mo>→</mo><mi>U</mi><mo stretchy="false">]</mo><mi>T</mi></mrow><mrow><mi mathvariant="normal">Γ</mi><mo>⊢</mo><mo stretchy="false">{</mo><mo>∗</mo><mi>U</mi><mo separator="true">,</mo><mi>t</mi><mo stretchy="false">}</mo><mtext> </mtext><mi>a</mi><mi>s</mi><mtext> </mtext><mo stretchy="false">{</mo><mi mathvariant="normal">∃</mi><mi>X</mi><mo separator="true">,</mo><mi>T</mi><mo stretchy="false">}</mo><mo>:</mo><mo stretchy="false">{</mo><mi mathvariant="normal">∃</mi><mi>X</mi><mo separator="true">,</mo><mi>T</mi><mo stretchy="false">}</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\Gamma \vdash t : [X\rightarrow U]T}{\Gamma \vdash \{*U, t\}\ as\ \{\exists X, T\} : \{\exists X, T\}} </annotation></semantics></math></span>
+<h2 id="Misc">Misc</h2>
+<blockquote>
+<p>愛されたくて偽って　もっともっと自然に笑えばいいかな</p>
+</blockquote>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/diary/" rel="tag">diary</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/posts/rec-4-10-2018/"
+                    data-tooltip="Notes for 4-10"
+                    aria-label="PREVIOUS: Notes for 4-10"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/posts/rec-4-4-2018/"
+                    data-tooltip="Records of day Apr. 4, 2018"
+                    aria-label="NEXT: Records of day Apr. 4, 2018"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://nir.moe/posts/rec-4-7-2018/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://nir.moe/posts/rec-4-7-2018/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://nir.moe/posts/rec-4-7-2018/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="Leave a comment"
+                    >
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />
+        The work by NoirGif, unless otherwise specified, is licensed under a <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">CC 4.0 BY-SA</a> license. The cover picture on the left is from the loved <a target="_blank" rel="noopener" href="https://twitter.com/swd3e22">swd3e2</a>.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/posts/rec-4-10-2018/"
+                    data-tooltip="Notes for 4-10"
+                    aria-label="PREVIOUS: Notes for 4-10"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/posts/rec-4-4-2018/"
+                    data-tooltip="Records of day Apr. 4, 2018"
+                    aria-label="NEXT: Records of day Apr. 4, 2018"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://nir.moe/posts/rec-4-7-2018/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://nir.moe/posts/rec-4-7-2018/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://nir.moe/posts/rec-4-7-2018/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="Leave a comment"
+                    >
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://nir.moe/posts/rec-4-7-2018/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=https://nir.moe/posts/rec-4-7-2018/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=https://nir.moe/posts/rec-4-7-2018/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/2b3dc29544c9a208eb5bb88773efbfec?s=110" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">NoirGif</h4>
+        
+            <div id="about-card-bio"><p>A progamer.<div id="snow-bringer" style="cursor: pointer;"> (click me to see some <i class="far fa-snowflake"></i>)</div></p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Student(probably)</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+            <div id="algolia-search-modal" class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-button"><i class="fa fa-times"></i></span>
+            <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+                <span class="searchby-algolia-text text-color-light text-small">by</span>
+                <img class="searchby-algolia-logo" src="/assets/images/logo-algolia-nebula-blue-full.svg">
+            </a>
+            <i class="search-icon fa fa-search"></i>
+            <form id="algolia-search-form">
+                <input type="text" id="algolia-search-input" name="search"
+                    class="form-control input--large search-input" placeholder="Search "
+                    />
+            </form>
+        </div>
+        <div class="modal-body">
+            <div class="no-result text-color-light text-center">no post found</div>
+            <div class="results">
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/re-personal-blog-from-zero/"
+                            aria-label=": Re:personal blog from zero"
+                        >
+                            <h3 class="media-heading">Re:personal blog from zero</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月23日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>现在这里各种意义上都很危险。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/initramfs/"
+                            aria-label=": initramfs"
+                        >
+                            <h3 class="media-heading">initramfs</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月25日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>initramfs与mkinitcpio</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/nameref/"
+                            aria-label=": nameref"
+                        >
+                            <h3 class="media-heading">nameref</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月26日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>嗯哼。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/katex/"
+                            aria-label=": KaTeX"
+                        >
+                            <h3 class="media-heading">KaTeX</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月27日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>Ad infinitum!</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/background-finding-plan/"
+                            aria-label=": 背景寻找计划"
+                        >
+                            <h3 class="media-heading">背景寻找计划</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月27日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>为了不被人说模板借用图片也借用一个人的，我踏上了寻找背景的旅程。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/1984/"
+                            aria-label=": 1984"
+                        >
+                            <h3 class="media-heading">1984</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月30日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/mma-and-anbox/"
+                            aria-label=": MMA and Anbox"
+                        >
+                            <h3 class="media-heading">MMA and Anbox</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年5月6日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>更新了系统之后,MMA就启动不了了，代替的是</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/sakuranouta/"
+                            aria-label=": 樱之诗"
+                        >
+                            <h3 class="media-heading">樱之诗</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年5月9日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><blockquote><p>薄っぺらの天才は、才能が透けて見える。
+本物の天才は、才能を忘れさせる。</p>
+</blockquote></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/lunatic/"
+                            aria-label=": Lunatic"
+                        >
+                            <h3 class="media-heading">Lunatic</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年5月9日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/9999-chicks-for-a-dollar/"
+                            aria-label=": 一刀9999级的世界"
+                        >
+                            <h3 class="media-heading">一刀9999级的世界</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年5月16日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>脚下是冰冷的石板。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p class="results-count text-medium"
+                data-message-zero="no post found"
+                data-message-one="1 post found"
+                data-message-other="{n} posts found">
+                68 posts found
+            </p>
+        </div>
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/script-odbpacdkk9uanhunctrhnduc8qt5p4vjokzz6etwwv1d9q2ov2n0vhsjutes.min.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+        <script>
+          var disqus_config = function() {
+            this.page.url = 'https://nir.moe/posts/rec-4-7-2018/';
+              
+            this.page.identifier = 'posts/rec-4-7-2018/';
+              
+          };
+          (function() {
+            var d = document, s = d.createElement('script');
+            var disqus_shortname = 'noirina-moe';
+            s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+    
+
+
+
+    
+<script src="/assets/js/moment-with-locales.js"></script>
+
+    
+<script src="/assets/js/algoliasearch.js"></script>
+
+    <script>
+      var algoliaClient = algoliasearch('4VZ5FRVLMP', '1040be093d539de0ea08b83ce51244f9');
+      var algoliaIndex = algoliaClient.initIndex('nir.moe');
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+    </body>
+</html>

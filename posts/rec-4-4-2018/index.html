@@ -1,0 +1,1025 @@
+
+<!DOCTYPE html>
+<html lang="en,zh-cn,default">
+    
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Goddess Unknown">
+    <title>Records of day Apr. 4, 2018 - Goddess Unknown</title>
+    <meta name="author" content="NoirGif">
+    
+    
+        <link rel="icon" href="https://nir.moe/assets/images/neptune.ico">
+    
+    
+        
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+        
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"NoirGif","sameAs":["https://github.com/noirgif"],"image":"https://www.gravatar.com/avatar/156087375592d08ad65a6512cae76add"},"articleBody":"Computer Architecture\n\nCache Optimization\n\nLower 3C:\n\n+cache block size -&gt; -compulsory -&gt; +conflict\n+cache capacity -&gt; -capacity caused misses -&gt; hit time\n+associativity -&gt; +parallel comparison\n\n\nLower cost of cache miss:\n\nmulti-layer cache(victim cache)\n\nglobal miss rate vs. local miss rate, AMAT\nIf L2 cache is much larger than L1, the global miss rate is close to that with a single level cache of L2’s size\nplaceholder\n\n\n\n\nplaceholder\n\nSmall and simple first level caches\nCritical timing path:\nDirect-mapped caches can overlap tag compare and transmission\nplaceholder\n\n\n\n\n\nProgramming Languages\nRefer to this page.\nSince in OCaml the content of a function is not evaluated in its definition, the approach could be used to create lists with infinite length.\ntype &#x27;a list = Nil | Cons of &#x27;a * (unit -&gt; &#x27;a list);;\nThe good thing about it is that the function is not evaluated at once, so the infinite recursion is avoided.\nAnd there is some other utilities:\nlet head x = let Cons(a, _) = x in a;;let tail x = let Cons(_, b) = x in b ();;let rec take n x = match n, x with| _, Nil -&gt; []| 0, _ -&gt; []| n, Cons(h, tf) -&gt; h :: take (n-1) (tf ());;let rec drop n x = match n, x with| _, [] -&gt; []| 0, x -&gt; x| n, Cons(h, tf) -&gt; drop (n - 1) (tf ());;let rec fmap f x = match x with| Nil -&gt; Nil| Cons(h, tf) -&gt; Cons(f h, fun () -&gt; fmap f (tf ()));;\nNote that () is of type unit in OCaml, not () in Haskell.\nAnd we can have something like 1... now in OCaml:\nlet rec toinf = fun x -&gt; Cons(x, fun () -&gt; toinf (x + 1));;\nOr better, some Fibonacci series:\nlet rec fib = fun x y -&gt; Cons(x, fun () -&gt; fib y (x + y));;\nArgh.\nThis one, though it looks elegant, would run slow.\nlet rec toinfslow x = Cons(x, fun () -&gt; fmap ((+) 1) (toinf x));;\nImagine: you get 20 in toinfslow 10 by adding to it 1 ten times.\nAnd a even slower Fibonacci series:\nlet rec fibslow x y = Cons(x, fun () -&gt; Cons(y, fun () -&gt; sum (fibslow x y) (tail (fibslow x y))));;\nGo with take 40 (fibslow 1 1) and you would not get the result as fast as the first one.\nOCaml has a lazy module that would delay the evaluation of the expression, and also cache the result. So a lazy list would be faster after calculating once.\nAbout Hacking Conferences\nChinese government has banned its security researchers from participating foreign security conferences this year, and Pwn2Own on Mar. 12-14, which Chinese dominated for years, was impacted by this new policy. And Zhou Hongyi, chief executor of 360, has previously stated that these loopholes ‘should remain in China’.\nLearning Kana Input…\nろぬふあう　えおやゆよ　わほへ\n` 1 2 3 4   5 6 7 8 9   0 - =\nたていすか　んなにらせ　゛゜む\nq w e r t   y u i o p   [ ] \\\nちとしはき　くまのりれ　け\na s d f g   h j k l ;   ’\nつさそひこ　みもねるめ\nz x c v b   n m , . /\nUse shift key for smaller kana. E.g. ゃ is entered with Shift + 7.\nMisc\nWas yea erra hymme sarla yorr.\nAbout Vocaloid\n\n\nKemu was probably once troubled by Suzumu, a member of Kemu VOXX, and who had a similar style. Kemu came back with Haikei Doppelganger in 2017, which possibly refers to Suzumu.\n\n\nAfter the admitting the ghostwriting of some of his songs, Suzumu announced that he would retire from making vocaloid songs in 2017. Which means the Bookmark of Demise Project stopped without ending.\n\n\nMafumafu is said to had bad terms with Suzumu, which brought a lot damage to him.\n\n\nPowapowa-P, a.k.a. Shiina Mota, deceased at 20, with a red pen. The cause of his death was not revealed.\n\n\nSamfree died at 31 from illness. Recommend his Promise, although a lot may have already known it from Project Diva.\n\n\n","dateCreated":"2018-04-05T00:31:43+00:00","dateModified":"2023-04-05T05:34:52+00:00","datePublished":"2018-04-05T00:31:43+00:00","description":"","headline":"Records of day Apr. 4, 2018","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://nir.moe/posts/rec-4-4-2018/"},"publisher":{"@type":"Organization","name":"NoirGif","sameAs":["https://github.com/noirgif"],"image":"https://www.gravatar.com/avatar/156087375592d08ad65a6512cae76add","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/156087375592d08ad65a6512cae76add"}},"url":"https://nir.moe/posts/rec-4-4-2018/","keywords":"ordinary"}</script>
+    <meta name="description" content="Computer Architecture  Cache Optimization  Lower 3C:  +cache block size -&gt; -compulsory -&gt; +conflict +cache capacity -&gt; -capacity caused misses -&gt; hit time +associativity -&gt; +parallel co">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Records of day Apr. 4, 2018">
+<meta property="og:url" content="https://nir.moe/posts/rec-4-4-2018/index.html">
+<meta property="og:site_name" content="Goddess Unknown">
+<meta property="og:description" content="Computer Architecture  Cache Optimization  Lower 3C:  +cache block size -&gt; -compulsory -&gt; +conflict +cache capacity -&gt; -capacity caused misses -&gt; hit time +associativity -&gt; +parallel co">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-04-05T00:31:43.000Z">
+<meta property="article:modified_time" content="2023-04-05T05:34:52.207Z">
+<meta property="article:author" content="NoirGif">
+<meta property="article:tag" content="ordinary">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/2b3dc29544c9a208eb5bb88773efbfec?s=640"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/style-tmm15uo0bq6eabvwocvhspggawqy0ld33fbflaeb867kiiv7ochjx0qnolxm.min.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+    <!-- Decap CMS -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+    <body>
+        <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            Goddess Unknown
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+            <img class="header-picture" src="https://www.gravatar.com/avatar/2b3dc29544c9a208eb5bb88773efbfec?s=90" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a
+                    href="/#about"
+                    aria-label="Read more about the author"
+                >
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/2b3dc29544c9a208eb5bb88773efbfec?s=110" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">NoirGif</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>A progamer.<div id="snow-bringer" style="cursor: pointer;"> (click me to see some <i class="far fa-snowflake"></i>)</div></p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-archives"
+                            
+                            rel="noopener"
+                            title="Archives"
+                        >
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link open-algolia-search"
+                            href="#search"
+                            
+                            rel="noopener"
+                            title="Search"
+                        >
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/about"
+                            
+                            rel="noopener"
+                            title="About"
+                        >
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/links"
+                            
+                            rel="noopener"
+                            title="友情链接"
+                        >
+                        <i class="sidebar-button-icon fa fa-link" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">友情链接</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/noirgif"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/rss-all.xml"
+                            
+                            rel="noopener"
+                            title="RSS"
+                        >
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Records of day Apr. 4, 2018
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-04-05T00:31:43+00:00">
+	
+		    Apr 05, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/diary/">diary</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h2 id="Computer-Architecture">Computer Architecture</h2>
+<ul>
+<li>Cache Optimization
+<ul>
+<li>Lower 3C:
+<ul>
+<li>+cache block size -&gt; -compulsory -&gt; +conflict</li>
+<li>+cache capacity -&gt; -capacity caused misses -&gt; hit time</li>
+<li>+associativity -&gt; +parallel comparison</li>
+</ul>
+</li>
+<li>Lower cost of cache miss:
+<ul>
+<li>multi-layer cache(victim cache)
+<ul>
+<li>global miss rate vs. local miss rate, AMAT</li>
+<li>If L2 cache is much larger than L1, the global miss rate is close to that with a single level cache of L2’s size</li>
+<li>placeholder</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>placeholder
+<ul>
+<li>Small and simple first level caches</li>
+<li>Critical timing path:</li>
+<li>Direct-mapped caches can overlap tag compare and transmission</li>
+<li>placeholder</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Programming-Languages">Programming Languages</h2>
+<p>Refer to <a target="_blank" rel="noopener" href="https://www.cs.cornell.edu/courses/cs3110/2018sp/l/12-streams/notes.html">this page</a>.</p>
+<p>Since in OCaml the content of a function is not evaluated in its definition, the approach could be used to create lists with infinite length.</p>
+<figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="symbol">&#x27;a</span> <span class="built_in">list</span> = <span class="type">Nil</span> | <span class="type">Cons</span> <span class="keyword">of</span> <span class="symbol">&#x27;a</span> * (<span class="built_in">unit</span> -&gt; <span class="symbol">&#x27;a</span> <span class="built_in">list</span>);;</span><br></pre></td></tr></table></figure>
+<p>The good thing about it is that the function is not evaluated at once, so the infinite recursion is avoided.</p>
+<p>And there is some other utilities:</p>
+<figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> head x = <span class="keyword">let</span> <span class="type">Cons</span>(a, _) = x <span class="keyword">in</span> a;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tail x = <span class="keyword">let</span> <span class="type">Cons</span>(_, b) = x <span class="keyword">in</span> b <span class="literal">()</span>;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="keyword">rec</span> take n x = <span class="keyword">match</span> n, x <span class="keyword">with</span></span><br><span class="line">| _, <span class="type">Nil</span> -&gt; <span class="literal">[]</span></span><br><span class="line">| <span class="number">0</span>, _ -&gt; <span class="literal">[]</span></span><br><span class="line">| n, <span class="type">Cons</span>(h, tf) -&gt; h :: take (n-<span class="number">1</span>) (tf <span class="literal">()</span>);;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="keyword">rec</span> drop n x = <span class="keyword">match</span> n, x <span class="keyword">with</span></span><br><span class="line">| _, <span class="literal">[]</span> -&gt; <span class="literal">[]</span></span><br><span class="line">| <span class="number">0</span>, x -&gt; x</span><br><span class="line">| n, <span class="type">Cons</span>(h, tf) -&gt; drop (n - <span class="number">1</span>) (tf <span class="literal">()</span>);;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="keyword">rec</span> fmap f x = <span class="keyword">match</span> x <span class="keyword">with</span></span><br><span class="line">| <span class="type">Nil</span> -&gt; <span class="type">Nil</span></span><br><span class="line">| <span class="type">Cons</span>(h, tf) -&gt; <span class="type">Cons</span>(f h, <span class="keyword">fun</span> <span class="literal">()</span> -&gt; fmap f (tf <span class="literal">()</span>));;</span><br></pre></td></tr></table></figure>
+<p>Note that <code>()</code> is of type <code>unit</code> in OCaml, not <code>()</code> in Haskell.</p>
+<p>And we can have something like <code>1...</code> now in OCaml:</p>
+<figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="keyword">rec</span> toinf = <span class="keyword">fun</span> x -&gt; <span class="type">Cons</span>(x, <span class="keyword">fun</span> <span class="literal">()</span> -&gt; toinf (x + <span class="number">1</span>));;</span><br></pre></td></tr></table></figure>
+<p>Or better, some Fibonacci series:</p>
+<figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="keyword">rec</span> fib = <span class="keyword">fun</span> x y -&gt; <span class="type">Cons</span>(x, <span class="keyword">fun</span> <span class="literal">()</span> -&gt; fib y (x + y));;</span><br></pre></td></tr></table></figure>
+<p>Argh.</p>
+<p>This one, though it looks elegant, would run slow.</p>
+<figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="keyword">rec</span> toinfslow x = <span class="type">Cons</span>(x, <span class="keyword">fun</span> <span class="literal">()</span> -&gt; fmap ((+) <span class="number">1</span>) (toinf x));;</span><br></pre></td></tr></table></figure>
+<p>Imagine: you get <code>20</code> in <code>toinfslow 10</code> by adding to it 1 ten times.</p>
+<p>And a even slower Fibonacci series:</p>
+<figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="keyword">rec</span> fibslow x y = <span class="type">Cons</span>(x, <span class="keyword">fun</span> <span class="literal">()</span> -&gt; <span class="type">Cons</span>(y, <span class="keyword">fun</span> <span class="literal">()</span> -&gt; sum (fibslow x y) (tail (fibslow x y))));;</span><br></pre></td></tr></table></figure>
+<p>Go with <code>take 40 (fibslow 1 1)</code> and you would not get the result as fast as the first one.</p>
+<p>OCaml has a lazy module that would delay the evaluation of the expression, and also cache the result. So a lazy list would be faster after calculating once.</p>
+<h2 id="About-Hacking-Conferences">About Hacking Conferences</h2>
+<p>Chinese government has banned its security researchers from participating foreign security conferences this year, and Pwn2Own on Mar. 12-14, which Chinese dominated for years, was impacted by this new policy. And Zhou Hongyi, chief executor of 360, has previously stated that these loopholes ‘should remain in China’.</p>
+<h2 id="Learning-Kana-Input…">Learning Kana Input…</h2>
+<p>ろぬふあう　えおやゆよ　わほへ
+` 1 2 3 4   5 6 7 8 9   0 - =</p>
+<p>たていすか　んなにらせ　゛゜む
+q w e r t   y u i o p   [ ] \</p>
+<p>ちとしはき　くまのりれ　け
+a s d f g   h j k l ;   ’</p>
+<p>つさそひこ　みもねるめ
+z x c v b   n m , . /</p>
+<p>Use shift key for smaller kana. E.g. ゃ is entered with <code>Shift + 7</code>.</p>
+<h2 id="Misc">Misc</h2>
+<p>Was yea erra hymme sarla yorr.</p>
+<h3 id="About-Vocaloid">About Vocaloid</h3>
+<ul>
+<li>
+<p>Kemu was probably once troubled by Suzumu, a member of Kemu VOXX, and who had a similar style. Kemu came back with Haikei Doppelganger in 2017, which possibly refers to Suzumu.</p>
+</li>
+<li>
+<p>After the admitting the ghostwriting of some of his songs, Suzumu announced that he would retire from making vocaloid songs in 2017. Which means the Bookmark of Demise Project stopped without ending.</p>
+</li>
+<li>
+<p>Mafumafu is said to had bad terms with Suzumu, which brought a lot damage to him.</p>
+</li>
+<li>
+<p>Powapowa-P, a.k.a. Shiina Mota, deceased at 20, with <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=FBGvm_sXMzQ">a red pen</a>. The cause of his death was not revealed.</p>
+</li>
+<li>
+<p>Samfree died at 31 from illness. Recommend his <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Nn7aQYyKsQM">Promise</a>, although a lot may have already known it from Project Diva.</p>
+</li>
+</ul>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/ordinary/" rel="tag">ordinary</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/posts/rec-4-7-2018/"
+                    data-tooltip="Records of 4/7 to 4/9, 2018"
+                    aria-label="PREVIOUS: Records of 4/7 to 4/9, 2018"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/posts/rec-4-3-2018/"
+                    data-tooltip="Records of 4/3/2018, Tue"
+                    aria-label="NEXT: Records of 4/3/2018, Tue"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://nir.moe/posts/rec-4-4-2018/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://nir.moe/posts/rec-4-4-2018/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://nir.moe/posts/rec-4-4-2018/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="Leave a comment"
+                    >
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />
+        The work by NoirGif, unless otherwise specified, is licensed under a <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">CC 4.0 BY-SA</a> license. The cover picture on the left is from the loved <a target="_blank" rel="noopener" href="https://twitter.com/swd3e22">swd3e2</a>.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/posts/rec-4-7-2018/"
+                    data-tooltip="Records of 4/7 to 4/9, 2018"
+                    aria-label="PREVIOUS: Records of 4/7 to 4/9, 2018"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/posts/rec-4-3-2018/"
+                    data-tooltip="Records of 4/3/2018, Tue"
+                    aria-label="NEXT: Records of 4/3/2018, Tue"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://nir.moe/posts/rec-4-4-2018/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://nir.moe/posts/rec-4-4-2018/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://nir.moe/posts/rec-4-4-2018/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="Leave a comment"
+                    >
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://nir.moe/posts/rec-4-4-2018/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=https://nir.moe/posts/rec-4-4-2018/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=https://nir.moe/posts/rec-4-4-2018/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/2b3dc29544c9a208eb5bb88773efbfec?s=110" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">NoirGif</h4>
+        
+            <div id="about-card-bio"><p>A progamer.<div id="snow-bringer" style="cursor: pointer;"> (click me to see some <i class="far fa-snowflake"></i>)</div></p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Student(probably)</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+            <div id="algolia-search-modal" class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-button"><i class="fa fa-times"></i></span>
+            <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+                <span class="searchby-algolia-text text-color-light text-small">by</span>
+                <img class="searchby-algolia-logo" src="/assets/images/logo-algolia-nebula-blue-full.svg">
+            </a>
+            <i class="search-icon fa fa-search"></i>
+            <form id="algolia-search-form">
+                <input type="text" id="algolia-search-input" name="search"
+                    class="form-control input--large search-input" placeholder="Search "
+                    />
+            </form>
+        </div>
+        <div class="modal-body">
+            <div class="no-result text-color-light text-center">no post found</div>
+            <div class="results">
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/re-personal-blog-from-zero/"
+                            aria-label=": Re:personal blog from zero"
+                        >
+                            <h3 class="media-heading">Re:personal blog from zero</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月23日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>现在这里各种意义上都很危险。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/initramfs/"
+                            aria-label=": initramfs"
+                        >
+                            <h3 class="media-heading">initramfs</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月25日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>initramfs与mkinitcpio</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/nameref/"
+                            aria-label=": nameref"
+                        >
+                            <h3 class="media-heading">nameref</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月26日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>嗯哼。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/katex/"
+                            aria-label=": KaTeX"
+                        >
+                            <h3 class="media-heading">KaTeX</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月27日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>Ad infinitum!</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/background-finding-plan/"
+                            aria-label=": 背景寻找计划"
+                        >
+                            <h3 class="media-heading">背景寻找计划</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月27日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>为了不被人说模板借用图片也借用一个人的，我踏上了寻找背景的旅程。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/1984/"
+                            aria-label=": 1984"
+                        >
+                            <h3 class="media-heading">1984</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月30日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/mma-and-anbox/"
+                            aria-label=": MMA and Anbox"
+                        >
+                            <h3 class="media-heading">MMA and Anbox</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年5月6日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>更新了系统之后,MMA就启动不了了，代替的是</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/sakuranouta/"
+                            aria-label=": 樱之诗"
+                        >
+                            <h3 class="media-heading">樱之诗</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年5月9日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><blockquote><p>薄っぺらの天才は、才能が透けて見える。
+本物の天才は、才能を忘れさせる。</p>
+</blockquote></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/lunatic/"
+                            aria-label=": Lunatic"
+                        >
+                            <h3 class="media-heading">Lunatic</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年5月9日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/9999-chicks-for-a-dollar/"
+                            aria-label=": 一刀9999级的世界"
+                        >
+                            <h3 class="media-heading">一刀9999级的世界</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年5月16日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>脚下是冰冷的石板。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p class="results-count text-medium"
+                data-message-zero="no post found"
+                data-message-one="1 post found"
+                data-message-other="{n} posts found">
+                68 posts found
+            </p>
+        </div>
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/script-odbpacdkk9uanhunctrhnduc8qt5p4vjokzz6etwwv1d9q2ov2n0vhsjutes.min.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+        <script>
+          var disqus_config = function() {
+            this.page.url = 'https://nir.moe/posts/rec-4-4-2018/';
+              
+            this.page.identifier = 'posts/rec-4-4-2018/';
+              
+          };
+          (function() {
+            var d = document, s = d.createElement('script');
+            var disqus_shortname = 'noirina-moe';
+            s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+    
+
+
+
+    
+<script src="/assets/js/moment-with-locales.js"></script>
+
+    
+<script src="/assets/js/algoliasearch.js"></script>
+
+    <script>
+      var algoliaClient = algoliasearch('4VZ5FRVLMP', '1040be093d539de0ea08b83ce51244f9');
+      var algoliaIndex = algoliaClient.initIndex('nir.moe');
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+    </body>
+</html>

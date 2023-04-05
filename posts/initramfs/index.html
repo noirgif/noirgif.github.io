@@ -1,0 +1,987 @@
+
+<!DOCTYPE html>
+<html lang="en,zh-cn,default">
+    
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Goddess Unknown">
+    <title>initramfs - Goddess Unknown</title>
+    <meta name="author" content="NoirGif">
+    
+    
+        <link rel="icon" href="https://nir.moe/assets/images/neptune.ico">
+    
+    
+        
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+        
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"NoirGif","sameAs":["https://github.com/noirgif"],"image":"https://www.gravatar.com/avatar/156087375592d08ad65a6512cae76add"},"articleBody":"\ninitramfs与mkinitcpio\n我们从initramfs开始。\ninitramfs(initial RAM filesystem)是initrd(initial ramdisk)的后继，是在Linux启动时加载入内存的东西。\n一看,后继!就是厉害，没话说。\nmkinitramfs则是新一代的生成initramfs的工具。\n锦上添花。两份喜悦。\nmkinitcpio中的cpio是copy in and out的意思，指initramfs是copy in and out。\n它有那么一堆优点：\n用busybox\n支持udev（我换成systemd了）进行自动的硬件检测\n支持hook的扩展\n。。。\n好像也没什么。\n运行\n# mkinitcpio -p linux \n就会调用预设的linux.preset（在/etc/mkinitcpio.d/下）进行镜像的生成。\n-k选项提示使用的内核，preset里直接使用vmlinux（z表示压缩）的内核版本。mkinitcpio会在/usr/lib/modules/$(uname -r)/下寻找必要的模块。\n因此modules与vmlinux的版本需要相同，否则需要手工指定版本。\n烦。\nhook\n在/etc/mkinitcpio.conf中，可以指定hooks选项。hooks是一些用来构建启动环境的脚本，bash脚本。\n为什么是bash。\nhook可以通过\n$ mkinitcpio -L\n来查询。\nbuild hooks的在/usr/lib/initcpio/install下可以找到。\nbuild hook在mkinitcpio的时候被执行。\n可以看到udev就是按照规则加载。\n看吧，开头就是一个#!/bin/bash。唉。\nruntime hooks在/usr/lib/initcpio/hooks下可以找到。\nruntime hook则是在启动的时候被调用，会存在同名的build hook将其加入启动脚本中去。\n好的。\n这些东西当然都是在initramfs里面，也就是说在kernel(那个vmlinuz)加载之后运行。\n为什么mkinitcpio需要挂载proc和sysfs呢（\n如果直接chroot就会出毛病，arch-chroot脚本就帮忙做了。\n否则需要\n# mount -t proc proc /proc# mount -t sysfs sys /sys# mount -t devtmpfs udev /dev\n神奇。\n\n智商分界线\n\n为了实现user swap space，在mkinitcpio.conf里加了uresume这个钩子，后来不用了没有删掉，导致启动不了。\n只好通过liveCD来修改，结果生成了多少次镜像都发现不管用。\n最后发现：\n我的镜像放在/boot/下，而/boot/是另外一个FAT分区。而我\n没有挂载boot分区！\n导致mkinitcpio生成的镜像并没有覆盖实际要用的那个。\n说实话在默认选项提示内核版本不对的时候就应该反应过来使用的是当初装机时的残骸了。\n一怒之下把那里面的/boot/一扫而光。\n早知道应该把分区挂载在/boot/efi/上，嗯，待会就去做。\n好像要改fstab，不能忘了。\n不然又是一顿好找。","dateCreated":"2017-04-25T01:07:31+00:00","dateModified":"2023-04-05T05:34:52+00:00","datePublished":"2017-04-25T01:07:31+00:00","description":"initramfs与mkinitcpio","headline":"initramfs","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://nir.moe/posts/initramfs/"},"publisher":{"@type":"Organization","name":"NoirGif","sameAs":["https://github.com/noirgif"],"image":"https://www.gravatar.com/avatar/156087375592d08ad65a6512cae76add","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/156087375592d08ad65a6512cae76add"}},"url":"https://nir.moe/posts/initramfs/","keywords":"linux, boot"}</script>
+    <meta name="description" content="initramfs与mkinitcpio">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="initramfs">
+<meta property="og:url" content="https://nir.moe/posts/initramfs/index.html">
+<meta property="og:site_name" content="Goddess Unknown">
+<meta property="og:description" content="initramfs与mkinitcpio">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-04-25T01:07:31.000Z">
+<meta property="article:modified_time" content="2023-04-05T05:34:52.203Z">
+<meta property="article:author" content="NoirGif">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="boot">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/2b3dc29544c9a208eb5bb88773efbfec?s=640"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/style-tmm15uo0bq6eabvwocvhspggawqy0ld33fbflaeb867kiiv7ochjx0qnolxm.min.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+    <!-- Decap CMS -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+    <body>
+        <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            Goddess Unknown
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="打开链接: /#about"
+            >
+        
+        
+            <img class="header-picture" src="https://www.gravatar.com/avatar/2b3dc29544c9a208eb5bb88773efbfec?s=90" alt="作者的图片"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a
+                    href="/#about"
+                    aria-label="阅读有关作者的更多信息"
+                >
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/2b3dc29544c9a208eb5bb88773efbfec?s=110" alt="作者的图片"/>
+                </a>
+                <h4 class="sidebar-profile-name">NoirGif</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>宅<div id="snow-bringer" style="cursor: pointer;"> （点我看雪 <i class="far fa-snowflake"></i>）</div></p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="首页"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">首页</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="分类"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">分类</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="标签"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">标签</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-archives"
+                            
+                            rel="noopener"
+                            title="归档"
+                        >
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">归档</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link open-algolia-search"
+                            href="#search"
+                            
+                            rel="noopener"
+                            title="搜索"
+                        >
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">搜索</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/about"
+                            
+                            rel="noopener"
+                            title="关于"
+                        >
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">关于</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/links"
+                            
+                            rel="noopener"
+                            title="友情链接"
+                        >
+                        <i class="sidebar-button-icon fa fa-link" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">友情链接</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/noirgif"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/rss-all.xml"
+                            
+                            rel="noopener"
+                            title="RSS"
+                        >
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            initramfs
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2017-04-25T01:07:31+00:00">
+	
+		    4月 25, 2017
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <!-- excerpt -->
+<h2 id="initramfs与mkinitcpio">initramfs与mkinitcpio</h2>
+<p>我们从initramfs开始。</p>
+<p>initramfs(initial RAM filesystem)是initrd(initial ramdisk)的后继，是在Linux启动时加载入内存的东西。</p>
+<p>一看,后继!就是厉害，没话说。</p>
+<p>mkinitramfs则是新一代的生成initramfs的工具。</p>
+<p>锦上添花。<del>两份喜悦。</del></p>
+<p>mkinitcpio中的cpio是copy in and out的意思，指initramfs是copy in and out。</p>
+<p>它有那么一堆优点：</p>
+<p>用busybox</p>
+<p>支持udev（我换成systemd了）进行自动的硬件检测</p>
+<p>支持hook的扩展</p>
+<p>。。。</p>
+<p>好像也没什么。</p>
+<p>运行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">mkinitcpio -p linux</span> </span><br></pre></td></tr></table></figure>
+<p>就会调用预设的linux.preset（在<code>/etc/mkinitcpio.d/</code>下）进行镜像的生成。</p>
+<p>-k选项提示使用的内核，preset里直接使用vmlinux（z表示压缩）的内核版本。mkinitcpio会在<code>/usr/lib/modules/$(uname -r)/</code>下寻找必要的模块。</p>
+<p>因此modules与vmlinux的版本需要相同，否则需要手工指定版本。</p>
+<p>烦。</p>
+<h2 id="hook">hook</h2>
+<p>在<code>/etc/mkinitcpio.conf</code>中，可以指定hooks选项。hooks是一些用来构建启动环境的脚本，bash脚本。</p>
+<p>为什么是bash。</p>
+<p>hook可以通过</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">mkinitcpio -L</span></span><br></pre></td></tr></table></figure>
+<p>来查询。</p>
+<p>build hooks的在<code>/usr/lib/initcpio/install</code>下可以找到。</p>
+<p>build hook在mkinitcpio的时候被执行。</p>
+<p>可以看到udev就是按照规则加载。</p>
+<p>看吧，开头就是一个<code>#!/bin/bash</code>。唉。</p>
+<p>runtime hooks在<code>/usr/lib/initcpio/hooks</code>下可以找到。</p>
+<p>runtime hook则是在启动的时候被调用，会存在同名的build hook将其加入启动脚本中去。</p>
+<p>好的。</p>
+<p>这些东西当然都是在initramfs里面，也就是说在kernel(那个vmlinuz)加载之后运行。</p>
+<p>为什么mkinitcpio需要挂载proc和sysfs呢（</p>
+<p>如果直接chroot就会出毛病，arch-chroot脚本就帮忙做了。</p>
+<p>否则需要</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">mount -t proc proc /proc</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">mount -t sysfs sys /sys</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">mount -t devtmpfs udev /dev</span></span><br></pre></td></tr></table></figure>
+<p>神奇。</p>
+<hr>
+<h2 id="智商分界线">智商分界线</h2>
+<hr>
+<p>为了实现user swap space，在<code>mkinitcpio.conf</code>里加了uresume这个钩子，后来不用了没有删掉，导致启动不了。</p>
+<p>只好通过liveCD来修改，结果生成了多少次镜像都发现不管用。</p>
+<p>最后发现：</p>
+<p>我的镜像放在<code>/boot/</code>下，而<code>/boot/</code>是另外一个FAT分区。而我</p>
+<p><strong>没有挂载boot分区！</strong></p>
+<p>导致mkinitcpio生成的镜像并没有覆盖实际要用的那个。</p>
+<p>说实话在默认选项提示内核版本不对的时候就应该反应过来使用的是当初装机时的残骸了。</p>
+<p>一怒之下把那里面的<code>/boot/</code>一扫而光。</p>
+<p>早知道应该把分区挂载在<code>/boot/efi/</code>上，嗯，待会就去做。</p>
+<p>好像要改fstab，不能忘了。</p>
+<p>不然又是一顿好找。</p>
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">标签</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/boot/" rel="tag">boot</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/linux/" rel="tag">linux</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/posts/nameref/"
+                    data-tooltip="nameref"
+                    aria-label="上一篇: nameref"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/posts/re-personal-blog-from-zero/"
+                    data-tooltip="Re:personal blog from zero"
+                    aria-label="下一篇: Re:personal blog from zero"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://nir.moe/posts/initramfs/"
+                    title="分享到 Facebook"
+                    aria-label="分享到 Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://nir.moe/posts/initramfs/"
+                    title="分享到 Twitter"
+                    aria-label="分享到 Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://nir.moe/posts/initramfs/"
+                    title="分享到 Google+"
+                    aria-label="分享到 Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="Leave a comment"
+                    >
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />
+        The work by NoirGif, unless otherwise specified, is licensed under a <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">CC 4.0 BY-SA</a> license. The cover picture on the left is from the loved <a target="_blank" rel="noopener" href="https://twitter.com/swd3e22">swd3e2</a>.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/posts/nameref/"
+                    data-tooltip="nameref"
+                    aria-label="上一篇: nameref"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/posts/re-personal-blog-from-zero/"
+                    data-tooltip="Re:personal blog from zero"
+                    aria-label="下一篇: Re:personal blog from zero"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://nir.moe/posts/initramfs/"
+                    title="分享到 Facebook"
+                    aria-label="分享到 Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://nir.moe/posts/initramfs/"
+                    title="分享到 Twitter"
+                    aria-label="分享到 Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://nir.moe/posts/initramfs/"
+                    title="分享到 Google+"
+                    aria-label="分享到 Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="Leave a comment"
+                    >
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://nir.moe/posts/initramfs/"
+                        aria-label="分享到 Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>分享到 Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=https://nir.moe/posts/initramfs/"
+                        aria-label="分享到 Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=https://nir.moe/posts/initramfs/"
+                        aria-label="分享到 Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>分享到 Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/2b3dc29544c9a208eb5bb88773efbfec?s=110" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">NoirGif</h4>
+        
+            <div id="about-card-bio"><p>A progamer.<div id="snow-bringer" style="cursor: pointer;"> (click me to see some <i class="far fa-snowflake"></i>)</div></p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Student(probably)</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+            <div id="algolia-search-modal" class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-button"><i class="fa fa-times"></i></span>
+            <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+                <span class="searchby-algolia-text text-color-light text-small">by</span>
+                <img class="searchby-algolia-logo" src="/assets/images/logo-algolia-nebula-blue-full.svg">
+            </a>
+            <i class="search-icon fa fa-search"></i>
+            <form id="algolia-search-form">
+                <input type="text" id="algolia-search-input" name="search"
+                    class="form-control input--large search-input" placeholder="Search "
+                    />
+            </form>
+        </div>
+        <div class="modal-body">
+            <div class="no-result text-color-light text-center">no post found</div>
+            <div class="results">
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/re-personal-blog-from-zero/"
+                            aria-label=": Re:personal blog from zero"
+                        >
+                            <h3 class="media-heading">Re:personal blog from zero</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月23日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>现在这里各种意义上都很危险。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/initramfs/"
+                            aria-label=": initramfs"
+                        >
+                            <h3 class="media-heading">initramfs</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月25日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>initramfs与mkinitcpio</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/nameref/"
+                            aria-label=": nameref"
+                        >
+                            <h3 class="media-heading">nameref</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月26日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>嗯哼。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/katex/"
+                            aria-label=": KaTeX"
+                        >
+                            <h3 class="media-heading">KaTeX</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月27日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>Ad infinitum!</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/background-finding-plan/"
+                            aria-label=": 背景寻找计划"
+                        >
+                            <h3 class="media-heading">背景寻找计划</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月27日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>为了不被人说模板借用图片也借用一个人的，我踏上了寻找背景的旅程。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/1984/"
+                            aria-label=": 1984"
+                        >
+                            <h3 class="media-heading">1984</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年4月30日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/mma-and-anbox/"
+                            aria-label=": MMA and Anbox"
+                        >
+                            <h3 class="media-heading">MMA and Anbox</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年5月6日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>更新了系统之后,MMA就启动不了了，代替的是</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/sakuranouta/"
+                            aria-label=": 樱之诗"
+                        >
+                            <h3 class="media-heading">樱之诗</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年5月9日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><blockquote><p>薄っぺらの天才は、才能が透けて見える。
+本物の天才は、才能を忘れさせる。</p>
+</blockquote></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/lunatic/"
+                            aria-label=": Lunatic"
+                        >
+                            <h3 class="media-heading">Lunatic</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年5月9日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a
+                            class="link-unstyled"
+                            href="https://nir.moe/posts/9999-chicks-for-a-dollar/"
+                            aria-label=": 一刀9999级的世界"
+                        >
+                            <h3 class="media-heading">一刀9999级的世界</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年5月16日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>脚下是冰冷的石板。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p class="results-count text-medium"
+                data-message-zero="no post found"
+                data-message-one="1 post found"
+                data-message-other="{n} posts found">
+                68 posts found
+            </p>
+        </div>
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/script-odbpacdkk9uanhunctrhnduc8qt5p4vjokzz6etwwv1d9q2ov2n0vhsjutes.min.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+        <script>
+          var disqus_config = function() {
+            this.page.url = 'https://nir.moe/posts/initramfs/';
+              
+            this.page.identifier = 'posts/initramfs/';
+              
+          };
+          (function() {
+            var d = document, s = d.createElement('script');
+            var disqus_shortname = 'noirina-moe';
+            s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+    
+
+
+
+    
+<script src="/assets/js/moment-with-locales.js"></script>
+
+    
+<script src="/assets/js/algoliasearch.js"></script>
+
+    <script>
+      var algoliaClient = algoliasearch('4VZ5FRVLMP', '1040be093d539de0ea08b83ce51244f9');
+      var algoliaIndex = algoliaClient.initIndex('nir.moe');
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+    </body>
+</html>

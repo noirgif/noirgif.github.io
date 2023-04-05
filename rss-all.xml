@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Goddess Unknown</title>
+    <link>https://nir.moe/</link>
+    
+    <atom:link href="https://nir.moe/rss-all.xml" rel="self" type="application/rss+xml"/>
+    
+    <description></description>
+    <pubDate>Wed, 05 Apr 2023 05:34:52 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>博客Plan B （复原）</title>
+      <link>https://nir.moe/posts/blog-plan-b-recovered/</link>
+      <guid>https://nir.moe/posts/blog-plan-b-recovered/</guid>
+      <pubDate>Wed, 05 Apr 2023 00:12:33 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;这篇博客是在Decap CMS上写的。&lt;/p&gt;
+&lt;p&gt;不知为何，Decap的汉字是从右往左输入的。而且退格会删除一整行。&lt;/p&gt;
+&lt;div class=&quot;figure &quot; style=&quot;width:;&quot;&gt;&lt;a class=&quot;fancybox&quot; href=&quot;/assets/i</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>这篇博客是在Decap CMS上写的。</p><p>不知为何，Decap的汉字是从右往左输入的。而且退格会删除一整行。</p><div class="figure " style="width:;"><a class="fancybox" href="/assets/image/screenshot-2023-04-04-232733.png" title="各平台汉语支持，写汉语的时候不支持的话，发布出来也一定不支持吧" data-caption="各平台汉语支持，写汉语的时候不支持的话，发布出来也一定不支持吧" data-fancybox="default"><img class="fig-img" src="/assets/image/screenshot-2023-04-04-232733.png" alt="各平台汉语支持，写汉语的时候不支持的话，发布出来也一定不支持吧"></a><span class="caption">各平台汉语支持，写汉语的时候不支持的话，发布出来也一定不支持吧</span></div><p>综上，Plan B大告失败！</p><hr><p>图里从里到外是：note（没截全），substack， hatenablog，medium。</p><p>另外：我还试了Ghost，也没有汉字字体。也是只能看着几个宋体字在黑体字间鹤立鸡群。但是Ghost还有办法挽回。当然，反面来说，如果不写中文的话，Note，medium都是非常方便的平台。而Hatenablog支持markdown，也是非常贴心。而且这些（除了Ghost）都不要钱。</p><p>DatoCMS有一个集中模式，还可以。如果能支持图片拖进去/粘贴就更好了。</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      <category domain="https://nir.moe/tags/blog/">blog</category>
+      
+      
+      <comments>https://nir.moe/posts/blog-plan-b-recovered/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>博客Plan B</title>
+      <link>https://nir.moe/posts/%E5%8D%9A%E5%AE%A2plan-b/</link>
+      <guid>https://nir.moe/posts/%E5%8D%9A%E5%AE%A2plan-b/</guid>
+      <pubDate>Wed, 05 Apr 2023 00:12:33 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;Decap在是博客这篇&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/screenshot-2023-04-04-232733.png&quot; alt=&quot;&quot; title=&quot;各平台汉语支持，，写汉语的时候不支持的话，，发布出来也一定不支持吧&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Pla</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>Decap在是博客这篇</p><p><img src="/assets/image/screenshot-2023-04-04-232733.png" alt="" title="各平台汉语支持，，写汉语的时候不支持的话，，发布出来也一定不支持吧"></p><p>Plan，综上﻿ B</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      
+      <comments>https://nir.moe/posts/%E5%8D%9A%E5%AE%A2plan-b/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>最后的博客</title>
+      <link>https://nir.moe/posts/last-blog/</link>
+      <guid>https://nir.moe/posts/last-blog/</guid>
+      <pubDate>Sun, 02 Apr 2023 20:18:11 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;在写这篇文章之前，我折腾了一下午的npm。改了依赖，扔了失修已久的&lt;code&gt;multilingual feed&lt;/code&gt;，为了解决一个错误听ChatGPT的话改了tranquilpeak主题一通，最后告诉我只要把&lt;code&gt;strip-indent&lt;/code&gt;的版本</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>在写这篇文章之前，我折腾了一下午的npm。改了依赖，扔了失修已久的<code>multilingual feed</code>，为了解决一个错误听ChatGPT的话改了tranquilpeak主题一通，最后告诉我只要把<code>strip-indent</code>的版本改回3.0.0就行了。现在这个时间点再运行<code>npm audit</code>，应该是0漏洞了。</p><p>这个博客从设立起到现在也快6个年头了。所以我想回忆一下这些年是怎么一路折腾来的。然后再谈谈这个博客的未来。</p><h2 id="心路旅程">心路旅程</h2><h3 id="域名">域名</h3><p>域名的问题，当时noir.moe和noire.moe都不知被谁注册了，所以一开始是noirina.moe，反正Noirina也是Noire。后来追求短，就变成了现在的nir.moe。现在noir.moe没有人注册，欢迎去买，noire.moe不可用，但是也不知道注册的人拿来在干啥——不用不如捐给我。</p><p>除了这个之外，<a href="http://xn--4gqsgvnk6gey3a8kfg8kdmct10k1ea910e.me">我还注册过一段时间什么.me</a>，大概是用的本名，解析到Blogger去。反正那个Blogger也没写什么东西，就没续费了。</p><p>我忘了，很久很久以前，其实是nomamama.top和nomamama.xyz。Nomamama是我名字的一个anagram（之后才发现不仅把w改成了m，还把一个u改成了a）结合Segagaga得来的。现在用的Noirgif是另一个anagram，这个是先弄成日语罗马字然后再变来的。跑题了。在西部数码注册的域名，虽然很便宜（记得年费是个位数）但是后来要求备案，不备案就不给解析，于是这个域名就送他们了。</p><h3 id="服务器">服务器</h3><p>一开始是在12美元一年的Ethernet Servers，搞个Nginx挂着（首要用途还是开VPN），然后是HostMyBytes。</p><p>这个博客的图片基本是传在Cloudinary上的。我需要先上传到那边，拿到URL再贴到这边。这大概是用VPS时候留下来的了。现在想想，其实图片也可以直接推到GitHub上。</p><p>用VPS的时候还想着用Cloudflare怎么加速——结果发现一用VPN就不好使了。但是现在就没有必要了，name server还是用的Cloudflare，也是当时留下来的。</p><p>在2018年底的时候，我同时也部署到VPS和Github Pages上了（见<a href="/posts/github-pages">如何被 GitHub Pages 蹬鼻子上脸</a>。其实单用Github Pages也可以——访问<a href="noirgif.github.io">noirgif.github.io</a>就是走的pages，但是我闲得慌，为了一点现在已经没用的功能，而搞了Netlify。</p><p>HostMyBytes在19年4月被Alpharacks收购，我在那个时候改用CircleCI跑Hexo，然后CircleCI部署到专用的分支。没用Travis CI的原因，印象里是因为它的镜像太旧了还是机子太破了，还是两者皆有？当时也没人教我，只好自己试着搞来搞去，搞成现在这个模样。</p><p>6月份那个VPS连不上，随后Alpharacks倒闭的消息传来，干脆就不要自己搭的Nginx，只推到Github上了事。从此这个博客只有域名是要钱的了，我觉得这是这个博客的顶峰。</p><p>半年后有了Github Actions。求你下次早点来。</p><h2 id="Hexo">Hexo</h2><p>在用Hexo之前我实在想不起来用的什么。大概是没有吧。用Hexo的起点大概是周围的人很多当时在用Hexo。印象很深的三个：</p><ol><li><a href="https://xuanwo.io">老涡的博客</a>：后来改用了Hugo。</li><li><a href="https://blog.skk.moe/">苏卡卡的博客</a>：不仅还在用，还自己折腾了很多，学不来。</li><li>没有第三个了。<a href="https://blog.yoitsu.moe">老肯</a>和<a href="https://farseerfc.me/">老fc</a>用的都是Pelican。</li></ol><p>喜欢的地方：主题很花哨。当时想着搞很多花哨东西，所以用了这个主题。现在没这个想法了。</p><p>有好有坏的地方：写作体验。用自己想用的编辑器，写Markdown固然简单，但是我有一个一直梦寐以求的功能：把图片拖进来，就能帮你上传到CDN，然后在博客里给你一个链接。我在Piazza用这个的时候就想着博客能不能有一个。Notion也会把文件上传到S3，不过Notion的数据可能都在S3。Hexo有一个Cloudinary插件，但是做的是你写一个tag，帮你插入Cloudinary上的图片，这种画蛇添足的事情。</p><p>头疼的地方：NodeJS加持的Hexo有很多插件，容易发生有的包没人维护了，这个没人维护的包的依赖有漏洞这种深奥的事情。按照这个部署的流程来说我是不需要管他们的？不是很清楚。但是想本地看一看效果的时候就很麻烦。今天我为此把multilingual feed删掉了。从此这个博客更新不分语言了：明天是英语，后天是日语。本博客虽然用各种语言写的，但是对多语言的支持闻者落泪。</p><p>我也不会折腾主题。把Hymmnos字体加进来（记得提醒我玩魔塔大陆3），被Katex折腾折腾，大概就是我力所能及的范围了。曾经有的、现在已经不工作了的飘雪的代码，其实是从Winter Plus的网站那里<s>偷</s>借过来的。请不要告诉North Plus我借了代码，也不要告诉上面的人我上过Soul Plus。</p><h2 id="总结">总结</h2><p>这大概会是我最后一次折腾这个博客了。下次再告诉我有漏洞，我会换到Hatenablog。届时大概会搞一个像R18网站一样的跳转选项，或者在主页里加一个banner。（最后一次折腾？）</p><p>最近玩蔚蓝档案，给我很深的感触，就是我经常被活动和人物迷惑了双眼，本来我最优先的momotalk却很少打开。</p><p>折腾博客，虽然给我带来很多收获，但是我感觉我渐渐离开了本博客随便写写东西的初衷。而这个初衷是我想继续贯彻的。所以我想以此为戒，也是纪念。</p><blockquote><p>Plus je écris les blogs, mieux j’aime les papier.</p><p>我写的博客越多，我就越喜欢纸。</p></blockquote><h2 id="附记：一点题外话">附记：一点题外话</h2><p>虽然游戏堆积成山（蔚蓝档案只是其中一个原因），但是最近有在打天使骚骚的 Demo。因为游戏堆积成山，所以还没有决定要买。</p><div class="figure " style="width:;"><a class="fancybox" href="/assets/image/tenshisouzou-3-30-2023-8-25-40.png" title="说这句台词的时候天使的表情就像万花筒一样" data-caption="说这句台词的时候天使的表情就像万花筒一样" data-fancybox="default"><img class="fig-img" src="/assets/image/tenshisouzou-3-30-2023-8-25-40.png" alt="说这句台词的时候天使的表情就像万花筒一样"></a><span class="caption">说这句台词的时候天使的表情就像万花筒一样</span></div><p>这篇博客开始写是晚上8点，现在已经是第二天了。昨天的日记也没写，Duolingo也没做，洗洗睡了。</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      <category domain="https://nir.moe/tags/blog/">blog</category>
+      
+      <category domain="https://nir.moe/tags/hexo/">hexo</category>
+      
+      
+      <comments>https://nir.moe/posts/last-blog/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Proposal of a New Type of Elevator that Uses Blockchain to Achieve High Availability</title>
+      <link>https://nir.moe/posts/blockchain-elevator/</link>
+      <guid>https://nir.moe/posts/blockchain-elevator/</guid>
+      <pubDate>Sat, 01 Apr 2023 10:09:05 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;Introduction&quot;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;As you may already know, the elevator in the computer sciences department has been broken since F</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="Introduction">Introduction</h2><p>As you may already know, the elevator in the computer sciences department has been broken since Friday and will remain unfixed throughout the weekend. Although we have a backup elevator, it gets overloaded even on a Saturday morning. When I went to grab a cup of coffee, someone else had already ridden it, so I had to take the stairs.</p><p>We strive to create systems with high availability. A loss of three days (averaging 0.9% throughout the year) is hardly acceptable. This brings us to today’s main theme:</p><p>We present a proposal for a new type of elevator that utilizes blockchain technology to achieve high availability.</p><p>The idea behind this proposal is to create an elevator system that never goes down. By using a decentralized blockchain network, the elevator system could potentially achieve 100% uptime, with no single point of failure.</p><h2 id="Design">Design</h2><p>The elevator’s control system would be connected to the blockchain network. Every time a passenger boards or exits the elevator, a new block would be added to the chain. The blocks would contain information about the elevator’s current position, direction, and speed. You can think of it as a transaction: validators (a new name for blockchain miners in this context) will include it in the chain. Once six blocks are validated on top of it, we will consider it confirmed, and the elevator will move toward the destination. The confirmation of the transaction on the Ethereum Mainnet takes approximately 84 seconds. However, faster confirmations can be achieved by using private chains.</p><p>Thanks to the decentralized nature of the system, the elevator will continue to function as long as most validators are online. Even if a hacker tries to tamper with the system, the blockchain’s consensus mechanism will ensure that the elevator’s history remains accurate and unalterable. If you take a two-hour coffee break on the sixth floor, everyone in the department will know about it.</p><p>In addition, the immutability of the blockchain guarantees that there will be no disputes over the operation of elevators, which can occur with traditional elevator systems. For instance, people often disagree on how long the doors should remain closed if no button is pressed, and it is often unclear whether the “close door” button accelerates the closing. With blockchains, these rules are enforced by the system, and there is no room for interpretation.</p><h2 id="Conclusion">Conclusion</h2><p>Elevators powered by blockchain technology have a lot of potential. We highly anticipate that they will replace the current broken elevator in the CS building.</p><p>Happy April Fool’s Day!</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      <category domain="https://nir.moe/tags/joke/">joke</category>
+      
+      
+      <comments>https://nir.moe/posts/blockchain-elevator/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>写在2023年的开始</title>
+      <link>https://nir.moe/posts/new-year-2023/</link>
+      <guid>https://nir.moe/posts/new-year-2023/</guid>
+      <pubDate>Sun, 01 Jan 2023 12:19:36 GMT</pubDate>
+      
+      <description>&lt;p&gt;2022年的最后没做什么特别的事。室友从一周的夏威夷旅行回来，晚餐点了Popeyes的外卖，顺带点了荞麦面。送到一看面黄黄的弯弯的，不像是荞麦面，倒像是方便面，不是很开心。&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>2022年的最后没做什么特别的事。室友从一周的夏威夷旅行回来，晚餐点了Popeyes的外卖，顺带点了荞麦面。送到一看面黄黄的弯弯的，不像是荞麦面，倒像是方便面，不是很开心。</p><span id="more"></span><p>饭后干了些有的没的，玩了会冬促的时候买的Pistol Whip —— 本来这种时间是给SDVX的，但是最近抽nemesis crew暴死，再加上现在月租不是固定1日开始，可以等blaster gate的新歌出了再加入，所以就暂时退订了。老实说现在没有PC限定解锁的歌，不加入也没啥损失了。退订是从日本时间的1日起生效，所以我2022年最后一次玩SDVX是在30号。说多了。Pistol Whip感觉上因为要经常躲，所以比Beat Saber更锻炼全身，而且对手腕也很友好。不过我打的时候还是手忙脚乱的，只能打打简单关卡。</p><img src="https://pbs.twimg.com/media/Fki3xWTWIAId_oJ?format=jpg&name=4096x4096" class="center clear fig-50" title="暴死记录，最多抽35次，结果抽了34次也没出"><p>打了一会儿之后，室友开始睡觉，而我就在这里打这篇文章了。手机放着 Kessoku Band，一遍播完之后从头开始，零点的时候在放专辑的第一首《青春Complex》。</p><p>吃荞麦面的理由，据说是荞麦面易断（我订的方便面倒是没这回事），寓意切断和旧的一年的联系。不过2022年我倒是还有几篇博客想写的没能写成。一篇是去芝加哥的游记，另一篇是12月某日的梦日记。希望近日能写完吧。战神打完了，孤独摇滚也看完了，雀魂也搁置了，最近除了学业，也没有什么急着想干的事情了，所以希望能沉下心来，读一点堆积成山的书，消化一些落了灰的游戏，缀连一些文字。</p><p>“停止使用互联网！”大概是我最想对我说的话了吧。</p><p>最近米吃完了，去杂货店买了一袋25磅的泰国香米。我这个人记性不好，总是忘了怎么打开米袋子。于是上网搜，第一个Youtube视频的作者是位年轻的女性，遗憾的是，她自己也不知道怎么解开的，就说尝试手解，不行就用剪刀。第二个视频是一个男的，他说：“大多人都会尝试手解开绳结，但是他们犯了一个错误：总是同时解两条线。正确的方法是一次只解一条线，就能拉开了。”</p><p>就让这篇博客作为开端吧。</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/diary/">diary</category>
+      
+      
+      <category domain="https://nir.moe/tags/sound-voltex/">sound voltex</category>
+      
+      <category domain="https://nir.moe/tags/bocchi-the-rock/">bocchi the rock</category>
+      
+      <category domain="https://nir.moe/tags/pistol-whip/">pistol whip</category>
+      
+      
+      <comments>https://nir.moe/posts/new-year-2023/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>最近电影四连</title>
+      <link>https://nir.moe/posts/2210-recent/</link>
+      <guid>https://nir.moe/posts/2210-recent/</guid>
+      <pubDate>Sun, 16 Oct 2022 18:10:35 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;因为Notion的字体看起来很不爽（黑体宋体夹杂），就在word上写了。在word上用的是霞鹜文楷。想不起来名字的时候就会想起来原神的可莉，这个字体的原型是名叫可莉的字体。
+二来word也有所谓的focus mode，会隐去一切无用UI。windows更新以来也有了focu</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>因为Notion的字体看起来很不爽（黑体宋体夹杂），就在word上写了。在word上用的是霞鹜文楷。想不起来名字的时候就会想起来原神的可莉，这个字体的原型是名叫可莉的字体。二来word也有所谓的focus mode，会隐去一切无用UI。windows更新以来也有了focus session。可以做到一种二重buff。在加上平时会开的focus assist，就可以聚焦到烧焦了！火，生命之火。燃烧，生命的意义。果然只有燃烧的时候，蜡烛才在证明自己的存在。SM？不SM。</p><p>闲话少叙。果然，最想分享的还是，最近无意之间连续看了三部meta电影。Meta电影只不过是我心里的说法，如果要说人话，那就是三部关于电影的电影。</p><p>第一部看的是《Nuovo Cinema Paradiso》（天堂电影院）。看的原因的话，果然还是《我想成为你的眼泪》（君の涙になりたい）这部小说。书中提到的是电影最后的片段，再者好像是名作，于是就看了。我也是按照书里的推荐，没有看3小时的版本（导剪版，反而越剪越长，真是疑惑），看的127分钟的原版。……是127分钟吧。讲的是一个人随电影成长的故事，然而电影没有伴随着人成长，而是默无声息地消失了。至于问题的场景——或者说问题的场景的剪辑——如果那些电影我都有看过就好了，我是这么想的。如果没有看过，就会像我现在这样，试图从干燥的海绵上硬挤出一两滴水。如果看过的话，就会像主人公那样，既失笑又怀念，笑着笑着不禁眼泪流下来吧。所以可能还是生错时代了。</p><p>第二部是《映画大好きポンポさん》（最爱电影的庞波小姐，或者是别的称呼）。讲的是围绕新电影制作，新人导演Gene Fini，新人女演员Natalie Woodward等人如何活跃的故事。一个特点，就是将电影制作，从一开始的剧本、选人，到最后的剪辑都有涉及。所以论meta程度，这部应该是最深的了。虽然Gene想看《天堂电影院》，但是Pompo小姐显然不是很有耐心看完，甚至暴言道，超过90分钟的电影都没意思。而这也是这部电影有意思的一个地方。因为涉及剧透，我就不想提及了，但是这种meta发言也是让我眼前一亮的地方。最近在看的《ユア・フォルマ》（Your Forma，中文不知道）（我讨厌word的地方：日语输入法切换 Alt+`，会调出听写）里，插图里有很多QR码，按文中的说法，是电子毒品的信息，不能直视，因为会脑内自动扫描。如果真的用手机扫了，其中一个QR码还会说“明明告诉你不要看了”。</p><p>第三部，其实不是第三部。是《Bullet Train》（子弹列车），大概1小时40分钟。听同学说的于是打算看，正好发现附近的AMC有上映，于是就去看了。说是附近，骑车也要40分钟。回想起来，还是不清楚这是好事还是坏事。去程是坐公交去的，这里的公交，前面有自行车架，可以放两辆车。因为去的时候是中午（中午的电影能打7折，加起来只要10刀），于是开映前在附近的Hyvee吃了顿饭。不知为什么少算了4刀左右，告诉了员工，员工也不在意。到场之后发现虽然场子很小，但是根本没有人来，只是之后来了两三人，四舍五入就是包场。内容，就是一般的好莱坞动作片，没有字幕所以有时候会听不懂。虽然之后也有枪林弹雨，但是子弹列车字面上指的是新干线。讲的是一群特工在新干线上从东京打到京都，最后死了几名特工，整列车都被整脱轨了。不仅仅是三方一两损的程度了。大家都亏大了。回来的路上才发现，自行车的前灯没了，只好重新买了一个。所以，到底是值不值呢。一说，是经验千金难买，但是问我想不想再经验一次，我大概也很难给出个肯定答案了。</p><p>之前打完金恋的时候也是这样。跑到湖边，看了夕阳。相较于游戏里的满目金色，现实里湖面只有一缕一缕的闪烁。然而就凭波光粼粼一词，恐是难以形容其刺眼。就算说是秋天的太阳照亮的湖面，哪怕是带上墨镜，也不愿意去直视吧，像我这种阳光下只会稍微变暗程度的眼镜，更是难抵其耀眼的光芒。触目难忘，讲的就是闭上眼睛，也能看到光斑。回想起来，如果少看手机的话应该更好了。我是为了丰富自己的内心，才去选择跟自己对话，跟大自然对话，跟自己心中的大自然对话的。写这篇博客，也是为了跟自己对话。正因为如此，才应该摒弃外界的骚扰，而直视自己的想法。不然，夕阳就只是夕阳而已了。之前去黄石国家公园，也感觉到自己想法的浅显，到了一个地方，只能拍拍照，感受一下大自然的鬼斧神工，就没有了。半点想法也挤不出来。明明自然在我面前展现自己的千姿百态，有美的一面，比如羚羊谷里暴洪冲刷出的各种图案，比如路上绵延的草原，有丑的一面，比如散发刺鼻气味的间歇泉。但是大自然不告诉你含义。含义需要自己汲取。黄石之旅有机会再详说。</p><p>说了这么多之后，第四部。是《Singin’ in the Rain》（雨中曲）。这是我分享了看完《子弹列车》之后，在频道里看到别的人最近看的作品，心血来潮在亚马逊上租了，当晚（说是当晚，其实是昨晚）麻将打了一半走人回家看的。大概也是1小时40分钟。嬉笑舞蹈之间讲述了电影业从无声到有声的迅速变迁。《La La Land》也是很久以前看的了，所以这种音乐剧特有的，二话不说跳起舞来的风格，让我首先想起的是印度的电影。可没想到上世纪的好莱坞就有了。我看到“call me a cab”“hey cab”这样的冷笑话也会禁不住笑起来，所以整篇看完非常愉快。挺喜欢男二的Cosmo，尤其是他的《Make ‘Em Laugh》。名作，也不一定就是深沉的，大概吧。</p><p>电影大概就是这些，游戏或者书的话，就下次再说吧。</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      <category domain="https://nir.moe/tags/movies/">movies</category>
+      
+      <category domain="https://nir.moe/tags/cinema-paradiso/">cinema paradiso</category>
+      
+      <category domain="https://nir.moe/tags/pompo-the-cinephile/">pompo the cinephile</category>
+      
+      <category domain="https://nir.moe/tags/singin-in-the-rain/">singin in the rain</category>
+      
+      <category domain="https://nir.moe/tags/bullet-train/">bullet train</category>
+      
+      <category domain="https://nir.moe/tags/kimi-no-namida-ni-naritai/">kimi no namida ni naritai</category>
+      
+      <category domain="https://nir.moe/tags/your-forma/">your forma</category>
+      
+      
+      <comments>https://nir.moe/posts/2210-recent/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>金恋，和一些最近的作品</title>
+      <link>https://nir.moe/posts/kinkoi/</link>
+      <guid>https://nir.moe/posts/kinkoi/</guid>
+      <pubDate>Mon, 06 Jun 2022 16:13:58 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;写在前面&quot;&gt;写在前面&lt;/h2&gt;
+&lt;p&gt;不用说也知道，本篇会有很多剧透。以前我大概会放一个大大的警示框在这里，列举一下包含哪些作品的剧透。但是我忘了怎么写的了。不过话说回来，提前告诉读者有什么剧透，难道不也是一种剧透吗？&lt;/p&gt;
+&lt;p&gt;那么，本篇大概包含金恋（金色ラブリッチェ）的剧透。&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="写在前面">写在前面</h2><p>不用说也知道，本篇会有很多剧透。以前我大概会放一个大大的警示框在这里，列举一下包含哪些作品的剧透。但是我忘了怎么写的了。不过话说回来，提前告诉读者有什么剧透，难道不也是一种剧透吗？</p><p>那么，本篇大概包含金恋（金色ラブリッチェ）的剧透。</p><span id="more"></span><h2 id="金色时光">金色时光</h2><p>如果有人问，说到金恋，你脑海里浮现的是什么画面？</p><p>我的答案一定是那反复出现的，波光粼粼的湖面。</p><p>游戏里，关于湖的传说虽然一带而过了，但是死，确确实实是永恒的话题。过于永恒而不知该从何说起。就算说，可能也会是一些老生常谈，不过我还是想努力讲一些有意思的事情。那么就看我下面的发挥了。对一个人来说，死意味着物质的消失和思想的消逝，不过对他人来说，这个人的又意味着什么呢？我问这个问题，是因为想到，我好久没有联系小学的同学了。如果说，一个人的死意味着没法再见到他们，那么对我来说——我明白这个说法不好——现在的联系不上的状态和死了，没有什么区别。</p><p>我们的关系在渐渐死去，变成说得上一点点话的陌生人。</p><p>如果一个陌生人死了，我的感想，当然排除没有感想的情况，应该不是针对死者的，而是一些泛泛的、漠不关心的感想：人如何脆弱、人生如何缥缈，如此这般。</p><p>高中的时候，隔壁班就有一个同学事故身亡。但是我不认识他。有同学说，他挺开朗的，不可能是自杀；有同学说，可惜了。我没有说什么。那天晚上，教学楼下摆了一圈蜡烛，他的一些朋友在那里默哀，我也去了。看着摇曳的烛光，我想着我要好好活着。结束后，他的妈妈几乎说不出话来，但是还是安静地说了谢谢你们来。离开的时候看着他的父母，我隐隐担心他们的婚姻还能否继续下去。不过也就仅此而已了。</p><p>对更亲近的人，抱有的感情应该会有所不同。我的记性很差，很久以前的事情大都记不太清楚了。要提最近的事情大概就是外婆了。每次去姨妈家，外婆是最关心我的那个。新年的时候，甚至还会塞给我压岁钱。临走的时候，总是希望我很快再回来一趟。然而这几年，我因为种种原因未能回家。远程电话的时候，看着她期待的眼神，我口头上说会早点回来，但也不敢保证什么时候。就在几个月前，家父打来电话说，外婆过世了。听到消息的时候，我不知所措。然后我想起来了：我终究没能回去见她一面。</p><p>外婆肯定不会怪我，她从来也没有说过我一句坏话。家父也没有责怪我。责怪我的从来都是我自己。可是，生者如何快活如何悲伤，同逝者又有何关呢？活的人永远没法替死人着想。所以我想，这喜怒哀乐大抵都是要归结到自己身上来的。</p><p>话说回来，只有归结到自身上来，才能成为实实在在的感觉。他人的小脚趾撞到桌角，与我又有何干？肯定是大笑一场。在纪念一些人的时候，有时会说没有X就没有Y，这也是把逝者的所作所为跟我们的现在联系起来。不然，光荣事迹再光荣，换来的大概也就是个无声的“哦”吧。</p><p>这里就用葬礼之后的问答收尾吧。可以算是在身边人过世后心理活动的一个例子吧。</p><p>“我有在闪闪发光吗，她没有对我失望吧？”</p><p>“我真的成为世界上最帅的男友了吗？”</p><h2 id="其他一些最近玩过看过的作品">其他一些最近玩过看过的作品</h2><p>Judgment，这个就死很多人了。大家都是硬派，没什么话说。</p><p>52赫兹的鲸（52ヘルツのクジラたち）。标题的来源是源自一头特别的鲸。通常鲸声音的频率在10-40Hz，而这头鲸的声音却超出了这一范围。因为据称别的鲸听不到这个频段的声音，人们称它为“最孤独的鲸”。这头鲸数年来没有被找到，只有它的声音飘荡在海洋里。全本书里我觉得美晴是里面最讨喜的人物了，最后她回去的时候我眼泪掉下来。我在想，天鹅之歌是不是也能用来形容这些没有被听到的SOS呢？查了下词典，再仔细想想，还是没那么像。</p><p>三体。看完之后有点激动，第三卷那个时间跨度大的不得了，有些追不上。</p><p>Ratchet &amp; Clank, the game和rift apart。这个两纯粹是老少皆宜的有趣游戏。</p><p>LUNARiA。不错的作品，我还在等松山写流星群的下一卷。</p><p>白金数据。开头居然有像是harmony的梗（人人身上装着IC芯片，由政府监督一举一动），有点快乐。</p><p>大概就这么多。如果要问我是什么刻骨铭心的内容的话，我说不上来。好酒也是要反复品才能出味的，像我这样，囫囵吞枣，不加思考地吸收，可能最后就忘得一干二净了。</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      <category domain="https://nir.moe/tags/game/">game</category>
+      
+      <category domain="https://nir.moe/tags/reading/">reading</category>
+      
+      <category domain="https://nir.moe/tags/kinkoi/">kinkoi</category>
+      
+      <category domain="https://nir.moe/tags/judgment/">judgment</category>
+      
+      <category domain="https://nir.moe/tags/52-hertz-no-kujira-tachi/">52 hertz no kujira tachi</category>
+      
+      
+      <comments>https://nir.moe/posts/kinkoi/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>The Rise and Demise of Twitter 2</title>
+      <link>https://nir.moe/posts/twitter2/</link>
+      <guid>https://nir.moe/posts/twitter2/</guid>
+      <pubDate>Tue, 17 May 2022 14:46:33 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;This is written to memorize the discord channel Twitter 2.&lt;/p&gt;
+&lt;h2 id=&quot;Some-Random-Ranting&quot;&gt;Some Random Ranting&lt;/h2&gt;
+&lt;p&gt;Not for everyone,</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>This is written to memorize the discord channel Twitter 2.</p><h2 id="Some-Random-Ranting">Some Random Ranting</h2><p>Not for everyone, but people recently are getting increasingly prone to anger, and cancel culture and exclusionism are prevailing. The world is going into pieces.</p><p>Yet the Internet itself is just a system which was invented decades ago for connecting computers. It’s always the human that is the problem. Originally to obtain social interaction, a person must blend into a group that they share little similarity with. This is getting less and less true with the introduction of social media, where people can find those who share great interests with them, share the same political stance with them, and share the same worldview with them. The same applies to receiving information, people now can easily find news that they love to see, views that they are supporting, or videos that they enjoy watching. “Why bother to watch things that I dislike? Why bother to talk to people that I dislike?” And they push themselves into a comfort zone, surrounded by only things they like. I’m doing it, for sure, and many people are doing it.</p><p>Also, tech companies behind social media are pushing this further in the name of “personalization”, because they know that this is the best way to make people stick with them, hence the best way to make money. As a result of this push from both sides, a person is more likely to only get to know a group of people like them, watch news that only say things they want to hear. Everyone lives in their own tiny world now.</p><p>Ridiculous it is, that the Internet was designed to connect people, but now it is segregating people.</p><p>Let me now imagine an extreme scenario, where Ant runs into Bat on the Internet. The problem is that Ant likes a film called Eekum, but Bat doesn’t, and thinks another film called Bokum is better. Tech companies are good at separating people due to their tastes, but they are not perfect, so understandable. It’s not like Ant doesn’t try to get along, Ant tries, to tell Bat how good Eekum is, and Bat does the same: tell Ant why Bokum is better. After some futile attempts, Ant can’t make Bat agree what Ant thinks. Because Ant hasn’t have a friend that loves Bokum, Ant thinks “maybe I just cannot get along with this type of people”, and by “this type of people” Ant means people who like Bokum. So, Ant just gives up. Later, Ant runs into Cat who also like Bokum as well, instead of talking with Cat, Ant thinks — “I can’t get along with someone like Bat”, so Ant walks away and never talked.</p><p>And sometimes I feel like I’m Ant, constantly under the influence of bias. Bias is the assumption of something we don’t know. We may assume the best or the worst of someone before even getting to know them. I understand that bias naturally happens, but oftentimes still falls into its hands, and make judgment based on bias. Why bother to learn more about someone I may hate, if I have plenty of people that I know I’m more probably to love? In such a way, people divide themselves into smaller and smaller groups. The segregation, in return, may fuel the bias, and mob mentality, to make people offensive against disagreements, in desperate attempt to defend their belief.</p><h2 id="The-Inception-of-Internet-2">The Inception of Internet 2</h2><p>Above is just my personal view, and Nyarla also feels tired of wars in the Internet. He comes up with the idea of Internet 2 in the book with the same title in 2019. In <em>Internet 2</em>, Nyarla imagines the outrage in Internet being overwhelmed by kindness, sympathy, and harmony.</p><blockquote><p>優しさがインターネットを支配する時代となる。It will become the era when kindness dominates the Internet.</p><footer><strong>Nyarla</strong><cite>Internet 2</cite></footer></blockquote><p>I use the word “harmony” because the whole idea of Internet 2 reminds me of the book <em>Harmony</em> by Project Itoh. <em>Harmony</em> portraits a dystopian world where everyone’s body is deemed the possession of humanity, and people’s minds are monitored to prevent any damage done to anyone including themselves. There is no dictator, but the collective mind is dictating everything.</p><p>Internet 2 might be something similar: everyone is forced by everyone to be kind, although “that kindness may not correspond to kindness in real life”. But in return, in Internet 2 there is no dissonance. People are happy.</p><p>But when it comes to Twitter2, things are a bit more complicated.</p><h2 id="Twilight-of-Twitter-2">Twilight of Twitter 2</h2><p>In Jan. 2021 Nyarla <a href="https://note.com/nyalra2/n/nbb2d6fbf1d34">set up the Twitter2 discord server</a>, dubbed “a truly happy SNS where everybody does not talk about politics or society, but watch anime and play games all day”.</p><p>In the short manga that introduces Twitter2, people are depicted as brains in jars, and Nyarla, depicted as a little girl, is taking care of them.</p><p>In the post Nyarla wrote that Twitter2 started from a joke. And he created it partly because someone asked him to do it and he’s interested in running Discord server, partly because “it’s interesting to make such a dystopian-like [Discord] server and have a community of otakus”.</p><p>Therefore, although Twitter2 shared some dystopian (or utopian, YMMV) nature with Internet 2, it was nowhere as extensive as the Internet 2, and was just a discord server of otakus. From a larger perspective, Twitter2 is the reflection of the Internet instead of Internet2, where people are in a smaller circle.</p><p>Nyarla’s note told a little about what’s in Twitter2, so I think I may also write something different.</p><h3 id="Channels">Channels</h3><p>Aside from hobby channels, like anime, game, manga, movie, books, etc., there are also channels that people share pics of animals, landscape, food, and talks about life, religion or private things.</p><p>Religion was one of the recently established channels. It probably spun from a discussion about whether God exists. I didn’t look into the channel very much, but it is interesting to see people talk about belief in a more open and objective way.</p><p>Liminal space is another one of the new channels. Pictures of empty space were posted there. Nyalra sometimes would repost liminal photos from twitter. He still does this sometimes. I also took a photo or two to post there but couldn’t find a good shot here where I live. Some photos there are interesting. Empty hallway, or even an empty room (not so liminal by definition, which confuses me a little), but I enjoy all the pictures there.</p><p>Some channels I visited most:</p><p>General: of course, most talk happens there.</p><p>Monologue (ひとり言): sometimes I’d like to write my thoughts there. There’s another channel called the wall (かべ) where harsher monologues were written. I couldn’t distinguish the difference until I learned about the phrase hitting wall (壁打ち), one of its meanings is to let things out alone.</p><p>Poison radio (毒電波): People were writing random things there. Most of them sounded crazy, which made me a little nervous and anxious. And that made me feel interested. The one I can remember most clearly is “the earth is targeted” (地球は、狙われている from Ultraman), because there was a person (nicknamed erson, with an icon P, if I got it right) posting it almost everyday. There’s a saying that if someone keeps repeating something it will be hard for you to get it out of your head. Here it proves itself again. “Poison radio” came from Leaf’s first visual novel Shizuku (1996). I took the English translation from the song INTERNET OVERDOSE, whose lyrics was by Nyalra.</p><p>Books (本): As I read books (lightnovels) much more than watching anime or comics. Sometimes a message popped up with a photo of newly bought books, or about a book recently read. There, I came to know Kazuki Sakuraba’s other works, and before then I only read GOSICK by the author. One of them being A Lollypop or a Bullet. It’s a story about a girl that grows up, with a girl that doesn’t have the chance to grow up. I also learned about Nobel Laureate Kazuo Ishiguro’s new book, Clara and the Sun, although I hadn’t read it until the server shut down.</p><h2 id="The-Sudden-Sunset">The Sudden Sunset</h2><p>Around the end of 2021, griefers appeared in the discord. Though I started writing it during Nov 2021, it is now May 2022, and I couldn’t remember things clearly, so I’ll try my best.</p><p>First there were spamming discord invites. Come join us to spam other servers, it said.</p><p>And another time, all channels were spammed with defecating GIFs. Because discord plays the GIF by default people are forced to see it. The server is down for a while, and it came back with bot administration to counter spams.</p><p>And finally, the server just disappeared. I didn’t know what happened until a friend told me attackers got it down.</p><p>From <a href="https://note.com/nyalra2/n/nbfb2aa75577b">Nyarla’s post</a>, the attackers used the below method to get the server banned:</p><ol><li>Use anonymous accounts to spam access tokens in the server</li><li>Report it to Discord</li><li>Discord bans the server due to TOS violation</li></ol><p>From a third person’s perspective, I’d say it is an incredibly elegant method, which achieves the most destruction with the least effort.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> And Discord’s lack of scrutiny before banning users and servers make this attack possible.</p><p>As a member, I wanted to say something, but surprisingly found myself at a loss for words. And at this time, 3 months after Nyarla set up a new server, and half a year after Twitter2’s disappearance, there’s nothing I can say about it any more. Some time it went just like that: people find themselves attention via the social network, but at the end, they don’t really need it.</p><p>And with that it concludes Twitter2’s short life.</p><h2 id="Footnotes">Footnotes</h2><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p>I thought this kind of method is more often done in China, where ill-minded people utilize other’s careless words to get them banned, especially if they something remotely bad about the government. <a href="#fnref1" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      <category domain="https://nir.moe/tags/social-media/">social media</category>
+      
+      <category domain="https://nir.moe/tags/social-network/">social network</category>
+      
+      <category domain="https://nir.moe/tags/twitter2/">twitter2</category>
+      
+      <category domain="https://nir.moe/tags/nyarla/">nyarla</category>
+      
+      
+      <comments>https://nir.moe/posts/twitter2/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Memory Order</title>
+      <link>https://nir.moe/posts/memory-order/</link>
+      <guid>https://nir.moe/posts/memory-order/</guid>
+      <pubDate>Tue, 12 Apr 2022 00:00:37 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;大家好，这里是很懂C++的BlancJpg。&lt;/p&gt;
+&lt;p&gt;Memory order是什么？哎呀怎么这个都不懂。Memory order不是很简单嘛！Memory是记忆，order是顺序。理所当然，memory order是记忆的顺序！当然，我记性不是很好，经常记不清顺序—</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>大家好，这里是很懂C++的BlancJpg。</p><p>Memory order是什么？哎呀怎么这个都不懂。Memory order不是很简单嘛！Memory是记忆，order是顺序。理所当然，memory order是记忆的顺序！当然，我记性不是很好，经常记不清顺序——卡特列夫库——是什么的库？</p><p>拿昨天的早饭做例子吧，我吃的是面包夹肉饼——好吃吗？嗯……还行吧——我记得很清楚，我先吃了面包再吃的肉饼的。</p><p>……什么？原子化？对对对，我的牙齿是先碰到面包，再碰到肉饼的分子的。所以从分子层面上来说我是先吃的面包。你呀，明明是分子说什么原子化。难道是要把分子劈开吗？想裂变吗？</p><p>就说是先吃面包了！麦当劳的肉饼比较x……好了好了换个例子！拿前天做例子吧，我是先吃的早餐然后吃的午餐。——我说吃早餐了就是吃了！别多管闲事！所以从正常人的眼里来看，我肯定是先吃的早餐然后吃的午餐，除非有人在超光速运动。啊不对，如果是超光速运动的人，那就不是吃了，大概会看到我先吐出午餐，再吐出早餐。像小红帽故事里的大灰狼一样。所以是小红帽在超光速运动。谁也没看见大灰狼吃奶奶的场景对吧？没看见就是一切皆有可能。</p><p>大灰狼记不记得自己点了什么菜呢？毕竟是order……哈哈！</p><p>讲到哪里了，讲到晚饭了。前天的晚饭吃得比较快活。吃的羊肉串加牛肉面。饿了一天的肚子也填饱了。——所以讲吃早餐了！话真多呢这家伙！走了！</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      <category domain="https://nir.moe/tags/joke/">joke</category>
+      
+      <category domain="https://nir.moe/tags/C/">C++</category>
+      
+      
+      <comments>https://nir.moe/posts/memory-order/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>日本語で適当になにか書こうか</title>
+      <link>https://nir.moe/posts/ja-diary-20210320/</link>
+      <guid>https://nir.moe/posts/ja-diary-20210320/</guid>
+      <pubDate>Sat, 20 Mar 2021 17:41:22 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;…っと勢いで言ったものの、なにか書くこともないので実際無謀だった。&lt;/p&gt;
+&lt;p&gt;これは、日本語の練習として発案された。私にとって日本語は母語でもないし、英語みたいに学校で勉強したこともない、ほぼ自学です。なので練習する必要がある。じゃないかな。だからこうして言葉を綴るのも</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>…っと勢いで言ったものの、なにか書くこともないので実際無謀だった。</p><p>これは、日本語の練習として発案された。私にとって日本語は母語でもないし、英語みたいに学校で勉強したこともない、ほぼ自学です。なので練習する必要がある。じゃないかな。だからこうして言葉を綴るのも一つの勉強ではないか。とりあえず、何も考えずに書くだけ。</p><p>真っ先に考えられるのは、どうすればこの文章を長く書ける方法だ。最近さくらもゆ遊んでるので、そこに言い換えることが多いのが気になる。そして、これも一つ文章を長くする形ではないか。しかし、それを読む人はどう思うのだろうか。私自身の感想は、言い換えれば言い換えるほど、会話の流れが連続ではなくなる。加えて、話し手が頻繁に言い換えることは、自信がないではないでしょうか。私英語でしゃべるときもよくあることだから。このワードで正しく伝えているのかって反射的に悩んで、もう一つの言葉を思い浮かべたならそれを即採用する傾向がある。しかし、言い換えてもなんの用もない場合は多数だな、と顧みてはそう思う。</p><p>よく考えれば、これも、小さなパニックではないか。なにか言い間違ってないかってパニックして、そして優先事項を見失ったではないか。だから、これはパニックは最悪につながるの、もう一つの証拠です。</p><p>でも、よくないって思っても、試してみたい心は私にはある。だから、これから、私もすこし言い換えて、言葉を遊びましょうか。</p><p>日記においては、近況報告もひとつの慣用のトピックだ。日常生活になにかを感じて、霊感、あるいは、ひらめくことも多いではないか。とはいえ、あんまりプライベートなことは報告しないつもりでいる。秘め事はやはり、自分に全く関心のない人や、自分に気遣いできる人に限って言う。</p><p>どこか出かけたら報告の材料にもなるが、残念ながら今のアメリカではそれは難しい。今はひたすら家（アパート）にいって、コロナ暴露の数字を眺めるだけ。最近が０になってる、数週前７や８もあったので、感染者みんな病院に移住したか、治ったかなんでしょう。ちなみに、二週前食料買いに出たら、そと盛大なパーティーも上げていたんだ、百人はあると思う。学生みんなマスクしてない、食い物飲み物していて、ごく普通のパーティー。彼らにとって、唯一異常なものは、このご時世だろう。終わっただと思うから、終わっていない、そういうこと。</p><p>もう一つは、韓国語を勉強してることかな。日本語で韓国語のこと言ってるのは確かにおかしいだが、言語はいろんなどこ似ている。例えば、数字の言い方も二つある、一つは中国語の発音から来た(il, i, sam, sa, o)、もう一つは自ら発明した言い方で、主に数える時に使う(hana, dul, set, net, daseot)。もう一つは曜日を使ってること、例えば、日曜日は il-yoil（ilは日で、yoは曜）。文法も少し似ているような気がしますが、あまり文法について勉強してないので割愛。</p><p>一か月前くらいで、ピアノを買ってました、ヤマハのP71です。グリーンハンド、初心者なので、それに適するではないかな。主に、音ゲーやる時間があるなら、一つ楽器でも勉強した方がいいではないかと思った。以前やってないのがちょっと悔やまれるが、それはそれでもっと自由の幼年を過ごせたので、どっちがいいか簡単に言えない。興味というのは、いつでも、当時のやりたいことを重んじることだと思う。興味が変わればそれに従い、現在を楽しめること。 Carpe diem といって、同じ名前のゲームが steam にあります。遊んではいないので、おすすめできないが。</p><p>思いついたことはこれくらい、すみません、言い換えることあんまり出来ていなくて、これから本番で、最後のチャンスです。しかし、雑談なので、どうやって括ろうかを悩む。最近、村上の UT（一応ユニクロのシャーツと説明しよう）出てるんですけど、すぐに完売してる。カフカのシャーツとか。20日現在 1q84 以外ほとんどなくなって、 Ebay で二倍の価額で転がっている。ノルウェーの森のカバー色柄のシャーツも全部売れたのに（英語版は赤と白と黒で、日本語のと違う）、なぜ 1q84 は売れていない。みんなもっと 1q84 を買おう、と世界の中心で叫びたいが、自分一服も買っていない。配送料が高いのでやめた。</p><p>これをブログにアプロードしようとした時、WSL がネットに繋がらない、めんどい。</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/diary/">diary</category>
+      
+      
+      <category domain="https://nir.moe/tags/ordinary/">ordinary</category>
+      
+      
+      <comments>https://nir.moe/posts/ja-diary-20210320/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>二之路</title>
+      <link>https://nir.moe/posts/otaku-journey/</link>
+      <guid>https://nir.moe/posts/otaku-journey/</guid>
+      <pubDate>Tue, 09 Feb 2021 04:22:52 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;我很早以前就像写一点东西记录一下自己二次元的心路历程了。我的记性算是差人一等的，很多年前的事情也记得七零八落的了。也正是因为如此，我希望能在脑子变得一干二净之前能尽可能多的记录下来，所谓“salvage”大概是如此吧。因为记忆问题，如果有差错也大概死无对证了。&lt;/p&gt;
+&lt;p</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>我很早以前就像写一点东西记录一下自己二次元的心路历程了。我的记性算是差人一等的，很多年前的事情也记得七零八落的了。也正是因为如此，我希望能在脑子变得一干二净之前能尽可能多的记录下来，所谓“salvage”大概是如此吧。因为记忆问题，如果有差错也大概死无对证了。</p><p>至于“二之路”的名字，上文也已说明，取（我的）二次元的心路历程之意。我有想过命名为二史，但转念一想，我一个无名小卒，有何自信给自己立史呢。如果我是某一位有名人物，倒是确实可以以列传称呼：二史某某列传。然后为人耻笑罢了。</p><p>不过话说回来，如果这篇半回忆、半打岔的文章，能让读者有那么一点怀念，那也算是值得了。</p><p>为了克服羞耻心理，也增加可搜索性，我会尽可能地至少用全名称呼一次作品或者其他事物而不是全部用简称或者诨名。但是详细介绍这些东西的责任还是交给百科了。物语系列的羽川翼说，我只知道我知道的东西。这次就让我来借用一下这个重言式。（重言式应该是 tautology 的翻译， tautology 除了有真理之意，也有废话的内蕴。这就所谓真理都是废话。道可道，非常道。）</p><p>想起非常道，我就想起那张插画里有饼干的游戏王卡了，名字应该叫<a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&amp;cid=5350">非常食</a>，可能台湾不叫紧急食物，于是就这么印上去了。</p><h2 id="黎明期">黎明期</h2><p>故事大概要从我小学时候说起。我爸给我买了一个黑色的 PSP3000。虽然玩零式的时候我确实有点怀疑这是不是2000了，但是看了一下对比图的的确确是 3000。那时候国内也不知道有没有正版小碟子买，就靠破解来装一些盗版：拿来的时候是显示一堆机器人——那时候我不知道变形金刚和高达有什么区别——的图片，然后最后一张是那个攻壳机动队的的笑脸男。后来换了一套，就变成鸡蛋图了。</p><p>小学到初中一二年级的时候我手上最好玩的东西大概就是这个 PSP 了吧。那时候我玩的最初的几个游戏里，有点印象的大概是歌姬计划 extend 。是 ex 而不是 歌姬计划 2nd 的原因，为我是按时间从后往前看的。就算我看不懂 MISS x TAKE 或者 CHEAP，听不懂初音或者镜音或者谁谁谁讲的什么日语，看着他们垂头丧气，也能知道那不是你打的很好的意思。比如第一首猫耳开关，我就是打了很多遍才终于过关的。不过我并没打完 —— 普通难度全过关，看到制作组名单还是非常非常后来，几年以后的事情了。</p><p>玩了节奏游戏，视奸在房间里的歌姬之后，我似乎还不够满足。还想去看看别的图，比如说色图。那时候百度搜图有时还会有漏网之鱼，所以碰巧撞上一两张越线的是完全有可能的。不知道该说这样的百度搜索是好还是不好，总之我碰到了不是初音的图，是一个大胸二次元妹子洗澡的图，我本能的去搜这位动漫人物是谁，结果告诉我，这是《我的朋友很少》的柏崎星奈。这应该就是我看的第一个我百分百有信心，可以算作二次元的动画了。换做现在我是不会去看友少动画的，不如说动画基本都不怎么看了。</p><p>那时候我也经常逛贴吧，初音后面跟两个不认识的字的吧、和友少吧我是常客。不发言的那种。所以周刊什么的也时不时会看看。这个吧把初音未来吧吞并，匹诺曹P 被称为汪峰P，等等，都是之后才听说的事情了。</p><p>另外一个让我印象深刻的游戏是秋之回忆 6（或者不意译，直接叫 Memories Off 6，简称 MO6）。那时我还非常纯情，打完远藤莉莉丝线之后，就怎么也不想打箱崎智纱线了。Bad end 也不敢打。唯一另外通关的一条线是学姐线，不过那也是很久之后的事了。MO6 除了是我打的第一个 galgame 以外，一个让我印象深刻的地方，就是番外小故事没有翻译，成了我学日语的契机。不过多年以后回来看，才发现全都是乱码，我还是看不懂。</p><hr><p>不知放这里是否合适，小学的我还受一位好朋友影响，玩起了口袋妖怪（现在有正式译名了），绿宝石。那位朋友选的蜥蜴，我选的火鸡。他还给了我很多指导，不然我肯定就因为卡关而不玩了——我属于不看剧情的流派。Grand Theft Auto Vice City 我从来都没做过主线任务。玩无主之地2的时候也是，我英语也不好；接到什么任务也不会切换，就都给做了；只会往白点跑然后哒哒哒；只记得小手指那么大的剧情。而不看剧情经常就让我不知道该往哪里跑，现在的游戏基本都有任务列表了，我也会读点英文了，把任务拎出来给我看这种设计可谓是我这种大脑退化玩家的福音。</p><p>言归正传，不知是不是字库限制，感觉有些名字非常奇怪。而且存档好像不利索，通关了就掉档了。总之那个 ROM 不行。那时候动画也有再看，不过大约看到成都地区就没再看了。虽然严格来说的确是二次元，但毕竟是儿童向的动画，所以跟本文的意趣并不完全相投。这就好比抓住一个日本人问，看海螺小姐和鬼太郎算是宅吗，人家估计也很为难。</p><hr><p>那时候也有在用村规打盗版的游戏王，动画也有看那么一点，总之黑魔导女孩（<a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&amp;cid=4766&amp;request_locale=en">这里</a>，第一张）非常色。休伯特（<a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&amp;cid=7409">这里</a>）也色，直到我认出来那是男人的身体之前。</p><h2 id="全盛期">全盛期</h2><p>以友少为起点，我感觉自己看了很多动画，但实际上一点也想不起来。我登陆了优酷土豆账号，虽然草刺猬的头像暗示了我从小学起就有这个账号了，但是历史记录却是像海浪冲过的沙滩一样干净，一点痕迹也不剩了。</p><p>好事是我有时及其闲得无聊，会在我的 iPod touch 上记录一下今天看了些什么，有的时候会记录一下看了些什么。那时候我还会记到我的一个步步高学习机上。这个学习机除了日常拿来查词，在物理和化学实验软件里试试各种东西以外，大概就用来看 V 家（包含初音的 Vocaloid 家族的简称）的 MV 和看看小说了。这个学习机上也有那个历史的只鳞片甲了。不过那个学习机尘封已久，也不在我手上，所以是无门了。如果挑我还记得的来说：</p><ul><li>保存的 PV 有<ul><li>DECO*27 的 ゆめゆめ —— 我当时觉得这个故事很好很喜欢，以及有可爱的动画。</li><li>n-buna 的 ウミユリ海底譚 —— 很喜欢旋律，以及有奇妙的插画。</li><li>一两首阳炎，但不是很确定，阳炎 Project 之后会讲到。</li></ul></li><li>看过的小说有<ul><li>《我女友与青梅竹马的惨烈修罗场》（简称俺修罗），这个是我印象里最先看的轻小说。原因是被标题吸引，看了动画第一集之后觉得很有意思，然后不想等一周只有一集的动画。所以应该是 2013 年 1 月。</li><li>精灵使的剑舞。</li><li>西尾维新的物语系列。</li></ul></li><li>还有一些看番记录，因为没有日语输入，所以尽可能地在用罗马音，有印象的有：<ul><li>赤眼的夏娜（第三季因为没看懂就没看了）、Fate Stay/Night 、武装神姬、零之使魔、命运石之门、电波女与青春男</li></ul></li></ul><p>我在 U 盘里也保存了从动漫之家（那时候好像还是 178 动漫）下的物语，凉宫春日，和奈亚子的轻小说的 txt ，供上机的时候看。</p><p>回到记录上来，iPod touch 的记录倒是有云上贵州给我留着，摘录几个以供观赏：</p><p>2012/1/13</p><p>“看了”</p><p>没有别的内容。大概是记录了我那一天看了什么，但是出于什么原因没有记下来。</p><p>2012/1/23</p><p>“おはよ,sinnen。”</p><p>至少这时候开始学平假名了。虽然说 MO6 是潜在动力，最直接的学日语的原因还是因为想学唱歌吧。最先会唱的是千本樱，那时候是对着罗马音唱。那时候我假名输入用的不利索——这也是我 Miku Flick 不会打的原因之一，另外一个原因就是菜——所以估计是用的罗马音键盘。</p><p>2012/1/30</p><p>“何も無い。(^_^)”</p><p>确实除了这句话什么都没有。</p><p>2012/1/30</p><p>“1.２３のsinnen-&gt;sinnnen 新年”</p><p>“1.23 おはよ-&gt;お早う”</p><p>一些更正。N 到底要不要多写一个我到现在还不是百分之一百肯定。</p><p>2012/11/25</p><p>“FSN 7 14:55SAO 21武装神姫 8Robotics;Notes 7ハヤテのごとく 3 8”</p><p>FSN 指 Fate Stay/Night, 14:55 可能是看到 14:55 的意思。SAO 是刀剑神域的英文首字母。最后一个是指旋风管家的第三季的第八集，这是那一年的冬季番。如果仔细看的话，这里的武装神姬，其实最后一个字是姫。鉴于那时候我不知道这个字念 cheng 上声，这应该也是用日语输入法打的。</p><p>2013/1/1</p><p>”Bakemonogatari  1-11</p><p>2013-1-1</p><p>Happy new year!“</p><p>明显我在这一天看了化物语的 1 到 11 集。</p><p>之后最早的记录就到 16 年，我上大学之后了。冒头的是这个 copypasta：</p><p>2016/11/16“总有人问我，笑话我，都十八岁的成年人了，大学生或者是高中生了，还玩这些废萌的海王星什么的有意思吗？</p><p>海王星大概是我们这一代青少年的回忆之一，“就像打碎Uzume的水晶”。海王星自然是一系列以盈利为目的的游戏，但是也是日本的neta教育游戏之一。诚然，从一开始，很多人因为海王星系列的“地雷”而放弃了后面的海王星。但是，CH拿到了更多的钱，也确实把一部又一部海王星做的越来越好。超次元尝到了初代的甜头，mk2开始变得深奥而寓意深刻，U又把动作带入了故事里。到了神次元，Victory自不必说，PP又是一部暖心之作。</p><p>到了去年的新次元，海王星的neta已经让我这个成年人开始深刻反思：已经成年的我是否深刻的理解了梦与希望，羁绊和抉择？很多人觉得海王星是一部萌豚游戏，但是萌豚时候的我们真的能完全吃透其中的内涵吗？就像父母不理解Nep一样，我们也可能没有理解Uzume。并非智商并非情商，而是我的“心商”没到吧。空有应试教育拔高的智商和中国式迂回套路情商的我们，或许还需要一颗坚定的心来带我们走对路。而相比于我们作为并非硬核玩家去看热评的各大3A，我宁愿选择玩懂我自以为萌豚时候就懂了的海王星。”</p><p>海王星替换的是什么我记得不太得了，隐约记得这是发在日语协会群里的玩意儿，所以大概是奥特曼吧，那个群里有个喜欢奥特曼的人。</p><p>除此之外，我也用这个 iPod touch 存了一些轻小说，如上面提及的放在 U 盘里的那些。</p><hr><p>我有印象的追番是从 12 年的冬季，《中二病也想谈恋爱！》开始的。前半段是在优酷看的，后半段在 Bilibili ，也就是 B 站上看的。那时候看别人都在结尾撒花，而我没有 B 站号，于是就把完结撒花发到 QQ 空间里去了。如果有小学同学知道我是死宅，那这大概就是原因所在。同时期的武装神姬我也在追。《刀剑神域》虽然也在追，但是也是在后半段（日语和英语会用 cour 来指跨季度的一季动画，和 season 区分开来，我是从第二个 cour）开始追的。</p><p>13 年春季追的番也无史可考。B 站只保存了 3 个月的历史记录。上面说的《俺修罗》也是看了小说之后就没看动画了，《魔王勇者》似乎也是这样。唯一有印象的是《我的妹妹是「大阪大妈」》。从那时候我就有了优先原作的倾向：会优先去看原作的轻小说或者漫画，而不是看改编动画。</p><p>那段时间我也第一次接触了 R18 的 galgame 。途径大概是那时经常上的毛站（ <a href="http://acgzone.us">acgzone.us</a> ，现已关闭）上看到的，被司田的作画吸引而下载的《五彩斑斓的世界》（由于其日文名，也被称色鸟鸟）。因为打完《世界》之后开始打《五彩斑斓的光芒》（也称光鸟鸟，不过原名顺序应该是鸟鸟光），而《光芒》我有的最早的存档也是在 13 年，因此推断是在 12 - 13 年通关色鸟鸟的。当时很喜欢黑长直。</p><hr><p>同样是 13 年，Vocaloid 我还很经常听。Jin 投稿的《Loss Time Memory》仅用一个月就在 niconico 突破百万播放，而以此为契机，我也接触到了 Jin 的一系列共享世界观的歌曲，这个系列被称为《阳炎 Project》。我依稀记得当时想学唱这首，和 n-buna 的《夜明けと蛍》。</p><p>我有印象的此类 vocaloid 歌曲的媒体化中，只有阳炎是走的最远的——书籍化，漫画化，甚至动画化。虽然我不太记得动画的内容了，只记得每集对应一首歌。像平成 Project 停留在歌曲，终焉的书签 Project 也因为 suzumu 中道崩殂而不了了之。2015 年及以后，我就没怎么关心 V 家了，至少贴吧是再也不逛了，所以这类消息就不得而知了。</p><h2 id="平缓期">平缓期</h2><p>上了高中，我感觉自己过得就是一个正常人的生活了。除了每周末回家的时候能得闲，住学校的时候跟二次元基本是无缘的。而在高中的这段时间我也一点记忆都没有。除了读了英文版的《1984》和《挪威的森林》以外，就不记得有什么课外活动了。</p><p>学校里，就像许多其他学校一样，都有一个动漫社。不过我没有加入。</p><p>印象里我还是看了很多轻小说的，但由于没有记录，也不确定是否是这段时间看的。比如说，当时学院战斗类型的轻小说井喷，我也看了不少：新约某魔法的禁书目录、绝对双刃、学园都市的六芒星、盟约的利维坦、最弱无败的神装机龙巴哈姆特、绯弹的亚里亚、三坪间的侵略者、如果折断她的旗，等等。还有许多名声不大的。这些书基本都是只记得看过，不记得内容，过目就忘的那种。因为忘了剧情，也就没有追下去了。</p><p>为了找书，我也经常去轻国论坛转悠，不过没混出个名堂来，大多数锁权限的书依旧看不了。</p><p>动画也时不时有看，但是不记得有看完的。基本是去看原作了。再者，人气大的作品基本都是动画化的，所以我这里照着萌娘百科的列表，来列一下13-14年除了上文提及过的，我看了原作的动画。</p><p>13年：学生会的一己之见、GJ部（少有的我追完了的动画）、问题儿童来自异世界？、打工吧!魔王大人、我的青春恋爱物语果然有问题、约会大作战、我的妹妹哪有这麼可爱、人鱼又上钩（这个没看多少，另外一个跟人鱼结婚的漫画倒是看完了）、变态王子与不笑猫、要听爸爸的话、只有神知道的世界、High School DxD、侵略！乌贼娘、出包王女（和 Darkness）、机巧少女不会受伤、我的脑内恋碍选项、萌萌侵略者 OUTBREAK COMPANY、Strike The Blood。</p><p>14年：伪恋、属性同好会（可能是后来才看的）、漫画家与助手、漆黑的子弹（还在等第八卷）、No Game No Life、剑灵（玩了一会儿就退坑了，网游不适合我）、希德尼娅的骑士、棺姬嘉依卡、星刻的龙骑士、目隐都市的演绎者（也就是之前说的阳炎 Project 动画）、斩·赤红之瞳！、月刊少女野崎君、日常系的异能战斗、甘城光辉游乐园、记录的地平线。</p><p>不过很多我也没有看到完结（比如棺姬只看了前两卷）。再者因为我也不经常去逛 B 站了，而是更多地逛轻小说站，所以看书和漫画的时间也不一定就是紧跟着动画播出。</p><h2 id="复发期">复发期</h2><p>上了大学之后，整个人似乎放纵了许多，漫画和轻小说又看了起来，但动画是基本不看了，就算是看，也少有能看完一季的。印象里有看完的有 2017 年的兽娘动物园，2018 年的 Pop Team Epic。没看完的有野良神，紫罗兰永恒花园，等等。</p><p>游戏也多打了很多。虽然在 2013 注册的 Steam 账号，但买第一个游戏还是直到上大学，有了银联卡才有的事，那是 2016 年。顺便一提，我买的第一个 Steam 游戏，If My Heart Had Wings，只打了一个开头，到现在都没打完。</p><p>如果用一个词形容高中到现在我的二次元历程的话，那就是始乱终弃。比起打完的游戏，永远是没打完的游戏多。看完的轻小说远不及没看完的（连载太长可能也是一个原因，比如农林）。</p><p>换言之，上了大学之后，我看的轻小说更偏向于短篇，少有名气的那些了；另外一方面，玩的游戏明显增加了，至于玩了哪些游戏，还有日渐疏远的动漫到底怎么了，就请听下回分解吧。如果有人希望有下回的话。</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      <category domain="https://nir.moe/tags/game/">game</category>
+      
+      <category domain="https://nir.moe/tags/lightnovel/">lightnovel</category>
+      
+      <category domain="https://nir.moe/tags/anime/">anime</category>
+      
+      <category domain="https://nir.moe/tags/manga/">manga</category>
+      
+      
+      <comments>https://nir.moe/posts/otaku-journey/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Sepia Memories -- Let&#39;s Talk about Sepia Tears, and some Free Games</title>
+      <link>https://nir.moe/posts/sepia-memories/</link>
+      <guid>https://nir.moe/posts/sepia-memories/</guid>
+      <pubDate>Fri, 22 Jan 2021 01:48:26 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;Back-to-2016&quot;&gt;Back to 2016&lt;/h2&gt;
+&lt;p&gt;I was an undergraduate then, and I had an Honor 7. One of the memories I had with that phone is searching everyday for a Marshmallow update. Don’t get me wrong, I still think it good to have an Android phone for the freedom it provides, although I make do with Apple for now.&lt;/p&gt;
+&lt;p&gt;And at that time I was hunting for some free games in the play store. Android phones usually don’t have access to Google services in Mainland China, so most cases I would check out some third-party app markets for applications or games. Except when I expected something different.&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="Back-to-2016">Back to 2016</h2><p>I was an undergraduate then, and I had an Honor 7. One of the memories I had with that phone is searching everyday for a Marshmallow update. Don’t get me wrong, I still think it good to have an Android phone for the freedom it provides, although I make do with Apple for now.</p><p>And at that time I was hunting for some free games in the play store. Android phones usually don’t have access to Google services in Mainland China, so most cases I would check out some third-party app markets for applications or games. Except when I expected something different.</p><span id="more"></span><p>For example, some games that do not have a Chinese language support. More so if it is as minor as something like visual novels. And that was what I decided to go treasure hunting for. Of course I did play those Temple Runs and Flappy Birds, but I may not digress here.</p><p>A note is that there are always better games out there, perhaps with a high price tag. So while you feel free to enjoy these games(partly cause they are free), it is also perfectly fine to pass and play those paid and better games. But sometimes it is real fun to find out whether a game is good or bad for you.</p><h2 id="Lily’s-Day-Off">Lily’s Day Off</h2><p>It is one of the first games I ran into, according to my Play Store records. The game is developed by Kyuppin, and freely available on Appstore or Play Store, with some ads(you can pay $4.99 to get rid of them for good, but the game does not force you to pay to unlock anything), and on Steam for a plain $4.99.</p><p>Something different with Lily is that the game begins with no information about either the protagonist, or the heroine Lilypad Lily. Who they are and what they do depend completely on player’s choice.</p><p>There’s a phrase in Japanese called “atodashi settei”(lit. afterhand settings), which describes the phenomenon where the author introduces new settings mid story to push the plot, instead of making them clear at the beginning. For instance, the protagonist is revealed to have some hidden ability in an emergency. Or some new characters to save their ass(Deux ex machina might be a better word for this). Since it destroys predictability of the story, guys reading detective fiction hate it so much that one of them called Ronald Knox stood out to recommend against it and some other things that ruins the fun.</p><p>So it is interesting to see someone make it to an extreme. The protagonist might be a serial killer, a stalker, or Lily’s best friend in different routes, and Lily can be a yandere, a sadistic torturer or even someone who wants to nuke the human. The game’s short, but full of absurdity of this kind.</p><p>When I was writing this article, I found out it has a sequel, similarly named Lily’s Night Off, featuring the same inanity but with much better quality, and a somewhat anticlimactic ending.</p><p>There are a lot of beatiful graphics which we can’t see in the previous work, and I found my self quite into the soundtrack. Some cons are that it is so short that it only takes half a hour to finish, and the writing a bit childish.</p><h2 id="Sepia-Tears">Sepia Tears</h2><p>I named this post after the game’s name. Made by Team NEET(now Scarlet String Studio), it is a short VN(a few hours) with no ads. Yes, one thing I love about it is that it is completely free.</p><p>The protagonist, Mark, runs into a mysterious girl in an afternoon on top of the school building. The girl names herself Myra, and wants to remind him of something that happened 3 years ago. As the story progresses, he finds out about the worries of people around him — his classmate and his little sister, and helps them get over the obstacles. And finally, he faces his own feelings, and the mystery of Myra reveals.</p><p>The game takes much longer than Lily’s Day Off, I’d say a couple of hours. The writing is giving me a strange feel, the characters feel a bit cold and distant, just like a usual winter morning. And Myra is the candlelight giving out some warmth in this sensational journey of loss and found.</p><p>Except a bit cynicism, and some big talk that may put one off it a little, here are some dialogs that may give out that kind of atmosphere a little.</p><blockquote><p>Myra: This is who I really am, anyway. Just an ecentric kid who enjoys a quiet night of reading.Mark: If that’s how you put it, then I’m justa a weak-willed slacker who would skip school before exams to talk to a girl he barely knows.</p></blockquote><p>Despite all of that, I’d say it is a nice game for its free price tag, compared to another free VN with a pink hair girl, which is too short to have any kind of plot development. I think that game somehow shows how hard it is to make a good VN.</p><p>If you play the game, remember: do not genuflect.</p><h2 id="Some-Discursion">Some Discursion</h2><p>After that I played some Unity-chan shooting. It’s some pixel danmaku shooting game made with Unity. The group later made another game named <em><a href="https://play.google.com/store/apps/details?id=jp.tank.ezdaemon.ots">SOUND SHOOTING!!!</a></em> which combines the shooting part with a little rhythm game elements. You can see the similarity in their UI or fights at a glance.</p><h2 id="Stellaren">Stellaren</h2><p>There is one nice free VN called Stellaren. Space opera might be the word to describe it. No. Space visual novel it is.</p><p>I can’t recall almost everything about every game I played more than three years ago. For games I played even back, even for games like <em>Irodoritori no Sekai</em>, one of the first visual novels I played and loved, in like 2012 or 2013.</p><p>So there’s M, the protagonist, with N, his childhood friend, runs away from a colony and into a ship, or army? led by C, and then served there as a fixer, or say mechanic. Later M gets caught by the opposing clan, but eventually gets in good terms with the commander V, who is a little yandere. After that a lot happened and all of them have to get together to fend off some alien with advanced technology, and finally boom, the end. That’s what I can recall from the whole game, although the game itself is really long — prolly tens of hours.</p><p>This one is really lengthy, and in my opinions, more like a typical visual novel. By typical I mean more things you would expect from a lightnovel or anime in 2000s, harem, tsundere, that kind of things. What I enjoyed most was probably the fight where you control a shuttle to shoot enemies down in space. I never skipped a single fight because I want to see a 9/9 or 10/10 at the end of a chapter. However, the difficulty cranked up near the end-game and I was a bit bored dying at the same stage. I remember myself, lying in bed, phone in hand, steering my fighter through the barrage of asteroids.</p><p>I played the original version, but it seems the author just put everything together and put some ads in it. It is find for me to replay Lily’s and Sepia Tears, but for a game as long as Stellaren, I fear I do not have the time to enjoy the space odessey. But that being said, Stellaren is a nice game, and it feels good to finish a long one like this. You know, that feel when you come home after a long journey, just like that.</p><h2 id="The-Dandelion-Girl-Don’t-You-Remember-Me">The Dandelion Girl: Don’t You Remember Me?</h2><p>It is a visual novel adapted from the sci-fi novel of the same name(just The Dandelion Girl, without the subtitle). Not one you could find in the play store since it’s a PC game, but it’s available for free on Steam. If you know Clannad the game, not the band, and have a little curiosity to do some research, you might know this. That is how I ran into it, and that was a day in December, 2017.</p><p>I found the game from a well-dated post in a little forum which I can’t name right now(if I knew that game was already on Steam since 2016, I could have had much less trouble; probably Valve wasn’t paying much to make its games to the top of the searches those days). The author decided to give it a remake, but since they cannot get the guy who draw the things to do it, they were a bit limited to what they can do. Despite that the remake was done, and it adds some more texts to the original version, including the subtitle. Yes the original game does not ask whether you remember me.</p><p>I remembered that I opened the game(after dealing with Wine stuff as most Linux users do), saw the girl’s appearance, with the weird feel of her eyes when she turned back, then immediately decided to read the novel instead. I’m truly sorry.</p><p>Going through the game again I would say it is a nice plot — anyway, how bad can it be when the plot is good? And the game differs from the novel a bit: there are some minor differences in languages and plots that makes the VN more like a VN, and the novel more like a novel. So nothing feels so out of place for me.</p><p>It’s quite short — takes half a hour. And hope you enjoy the time in a summer’s afternoon, on a hill, with dandelions, that passed down from 1961 to 2016.</p><h2 id="Coda">Coda</h2><p>There are other free games I already made a post for, like DDLC and Tetra, they are great games but which I played much more recently, so I left them out. A search will lead you to the posts.</p><p>Sometimes I stop and look back into my past. What I did, the friends I had, all sorts of thing. And when I do this, I feel being myself. 'Sides, it makes me really happy to see I still like the things I liked.</p><p>And please allow me to end this little memoria with some words in <em>The Dandelion Girl: Don’t You Remember Me?</em>, that has a little change to the repped line in the novel.</p><blockquote><p>“Oh, oh! You know, the day before yesterday I saw a rabbit, and yesterday a deer, and today, you.”</p><p>“And here I was taking it all for granted, I’ll have to stop by more often.”</p></blockquote>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/commentary/">commentary</category>
+      
+      
+      <category domain="https://nir.moe/tags/game/">game</category>
+      
+      
+      <comments>https://nir.moe/posts/sepia-memories/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>The Snow is Back</title>
+      <link>https://nir.moe/posts/The-Snow-is-Back/</link>
+      <guid>https://nir.moe/posts/The-Snow-is-Back/</guid>
+      <pubDate>Sat, 05 Dec 2020 02:30:11 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;It’s Christmas again. The renewed blog has seen the comeback of the whitey snow.&lt;/p&gt;
+&lt;p&gt;Find it in the side bar and try it out!&lt;/p&gt;
+&lt;p&gt;&lt;s</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>It’s Christmas again. The renewed blog has seen the comeback of the whitey snow.</p><p>Find it in the side bar and try it out!</p><p><span class=hymmnos>Wee waa ra vit rre hymmnos coall here</span></p>]]></content:encoded>
+      
+      
+      
+      <category domain="https://nir.moe/tags/blog/">blog</category>
+      
+      
+      <comments>https://nir.moe/posts/The-Snow-is-Back/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>缪可消失之日</title>
+      <link>https://nir.moe/posts/muke/</link>
+      <guid>https://nir.moe/posts/muke/</guid>
+      <pubDate>Sun, 15 Nov 2020 19:48:22 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;喜欢缪可的人通称缪客。大家都是缪客。&lt;/p&gt;
+&lt;p&gt;好吧，不是所有人，但是学校里的很多人，我认识的，我不认识的，都喜欢缪可。如果放学后有看到一群人围成一圈，像是在举行神秘仪式的邪教徒一样，那准保是在缪可。有的人喜欢缪可之甚，会在上课偷偷摸摸地缪可，被老师发现叫到后面罚站（现</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>喜欢缪可的人通称缪客。大家都是缪客。</p><p>好吧，不是所有人，但是学校里的很多人，我认识的，我不认识的，都喜欢缪可。如果放学后有看到一群人围成一圈，像是在举行神秘仪式的邪教徒一样，那准保是在缪可。有的人喜欢缪可之甚，会在上课偷偷摸摸地缪可，被老师发现叫到后面罚站（现在这个时代肯定不能随便叫学生罚站了）。我们学校甚至有缪可社，不少学生都有加入，他们会隔一个周末，在学校的足球场上举办大型缪可，学生们围成的圈有时候会特别大，大到跑道上。不过有的学生不喜欢大规模的活动（比如我就只会做到放学经过社办门口进去看一看的程度）。所以足球场上的盛景，也是一位缪友告诉我的。</p><p>我不太想说，但是有人喜欢自然有人无感，甚至反感。二狗（他说他家里人也管他这么叫，不仅因为他是老二，而且是狗年出生）大概就是其中一位。他就不是很喜欢随大流，他的一句口头禅就是“干嘛学那些人”。我觉得这可能跟他有个优秀的哥哥有关，虽然二狗从来不跟我们过多提这个哥哥。</p><p>我问过他：“二狗试试缪可吗？”</p><p>他顿了一下，摇了摇头，“最近太忙了，没时间”。我也就没再问过他了。</p><p>或许是知道缪可在学校里的人气，学校外面的街角那里，最近还有立缪可的广告牌，特别大的一张喷绘布。广告牌里的明星我虽然不熟悉，但是不得不说，她缪可的样子确实有点酷。</p><p>所以今天，我以为也是上上课，课间和朋友聊天的时候提到几句缪可，放学之后稍微缪可一下，这样平凡的一天。我错了。</p><hr><p>早上我看群里的消息，都是在讨论这个：缪可公司出了一个大丑闻。因为没有主流媒体报道，我只能从各个地方流传的消息里翻出个一二。虽然我自己对这类丑闻无所谓，但我大概知道，缪可完了。</p><p>不过我来到教室后，见到的又是另一番生龙活虎的景象：同学们或多或少都在讨论缪可，连一些就我所知从不缪可的人也加入了讨论。</p><p>“唉，缪可是挺好的，可惜被这个公司给毁了。”</p><p>“虽然我不是缪客，但是整这么一出，确实是要完了。”</p><p>“门口的那个广告牌估计要被砸了。”</p><p>我不忍心加入讨论，便拿出书来看，不过关于缪可的声音还是不断地传进我的耳朵。我只好装睡，用胳膊挡住耳朵直到上课铃响。</p><p>下课时，有些不缪可的人也会问我一句对这件事的看法，我回道，我能有什么看法，缪可要玩了呗。他们听到便嗤笑一声，继续聊别的了。有人在教室里对那位被罚站的同学大喊一句“今天还在课上缪可吗”，然后一阵哄笑。那位同学只是摇摇头，没说话。</p><p>放学后，本来司空见惯的缪可小团体也不见了。我经过缪可社办的时候，发现社办的牌子已经被卸下来，房间里不同寻常地冷清，偌大的房间里只有两个同学，一位在写作业，另一个在看手机，两个人我都有点印象。我问社团怎么了，看手机的同学抬了头望了我一眼，说：“决定解散了。”是嘛，我回答道，然后默默地离开。这是我最后一次进缪可社的房间。</p><p>路过街角，那个缪可的广告牌被人砸破了。破洞的位置大致在那位明星的脸附近。周围围了一圈人，有的人说“草”，有的人在拍照。我加快了脚步，想要把这个景象扔在脑后。</p><p>我知道从今天起，没有人敢在白天缪可了。</p><p>晚上在床上辗转反侧，理性告诉我，别去想缪可的事了，但是我就是止不住地去想，一旦想到，就止不住地难过。我问自己：“缪可本来不该是给人带来快乐的事情吗？为什么我现在这么难过？”</p><p>我笑了。我决定忘了它。</p><hr><p>几天之后，再去缪可社的时候，大门已经紧锁，门上贴着一张纸：</p><p>“虽然我们是喜爱缪可的一群人，但是我们无法容忍缪可公司的所作所为。所以我们决定，在缪可公司给出回复并作出道歉之前，无限期停止缪可社的活动。缪可社”</p><p>街角那个被打烂了脸的广告牌，第二天也拆了，只留下空空的铁架子。广告牌上的明星公开道歉，并宣布停止与缪可公司的一切合作。</p><p>二狗有问我：“最近还在缪可吗。”</p><p>我回答道：“没了。”</p><p>“哦。”他说道。然后他就没再问过我了。</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      <category domain="https://nir.moe/tags/cancel-culture/">cancel culture</category>
+      
+      
+      <comments>https://nir.moe/posts/muke/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>中秋打油诗一首</title>
+      <link>https://nir.moe/posts/mid-autumn-dayo/</link>
+      <guid>https://nir.moe/posts/mid-autumn-dayo/</guid>
+      <pubDate>Wed, 30 Sep 2020 08:15:32 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;故国路漫漫，佳节灯阑珊。&lt;/p&gt;
+&lt;p&gt;遥望人结伴，俯视影落单。&lt;/p&gt;
+&lt;p&gt;一碗白米饭，半瓶百岁山。&lt;/p&gt;
+&lt;p&gt;曲尽人已散，孤苦不堪言。&lt;/p&gt;
+</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>故国路漫漫，佳节灯阑珊。</p><p>遥望人结伴，俯视影落单。</p><p>一碗白米饭，半瓶百岁山。</p><p>曲尽人已散，孤苦不堪言。</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      <category domain="https://nir.moe/tags/life/">life</category>
+      
+      <category domain="https://nir.moe/tags/mid-autumn-festival/">mid-autumn festival</category>
+      
+      
+      <comments>https://nir.moe/posts/mid-autumn-dayo/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Dream Diary - 7,8</title>
+      <link>https://nir.moe/posts/dreamdiary-07/</link>
+      <guid>https://nir.moe/posts/dreamdiary-07/</guid>
+      <pubDate>Fri, 21 Aug 2020 16:03:00 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;2019&quot;&gt;#2019&lt;/h2&gt;
+&lt;p&gt;她站在跑道上，望着晚霞点缀着的海面。&lt;/p&gt;
+&lt;p&gt;我远远地望着她，揣摩着。她到底在看些什么，又在想些什么呢。是把海面看作是浩渺的宇宙，粼粼的波光当作是将抵的舰队？抑或是遥望海的另一端的本土，思念着许久不见的家人……和恋人呢？&lt;/p&gt;
+&lt;p&gt;再次遇到她，是在来到这艘航母之后的事了。当然我没有大模大样地问她在来这之前是否有恋人，以免打草惊蛇。不过就我的推断，开朗积极如她，赢得一段感情应当是不在话下。&lt;/p&gt;
+&lt;p&gt;一阵晚风袭来，我不禁打了个寒颤。她不冷么。不过即便如此，她依旧一动不动地站在那里，但不知为何，看起来更加遥远了。&lt;/p&gt;
+&lt;p&gt;这次，我没有跟她说上话。&lt;/p&gt;
+&lt;p&gt;2018年，未知外星文明入侵。&lt;/p&gt;
+&lt;p&gt;2020年，人类灭绝。&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="2019">#2019</h2><p>她站在跑道上，望着晚霞点缀着的海面。</p><p>我远远地望着她，揣摩着。她到底在看些什么，又在想些什么呢。是把海面看作是浩渺的宇宙，粼粼的波光当作是将抵的舰队？抑或是遥望海的另一端的本土，思念着许久不见的家人……和恋人呢？</p><p>再次遇到她，是在来到这艘航母之后的事了。当然我没有大模大样地问她在来这之前是否有恋人，以免打草惊蛇。不过就我的推断，开朗积极如她，赢得一段感情应当是不在话下。</p><p>一阵晚风袭来，我不禁打了个寒颤。她不冷么。不过即便如此，她依旧一动不动地站在那里，但不知为何，看起来更加遥远了。</p><p>这次，我没有跟她说上话。</p><p>2018年，未知外星文明入侵。</p><p>2020年，人类灭绝。</p><span id="more"></span><h2 id="2010">#2010</h2><p>星期六的下午。</p><p>老实说，我不是那么讨厌学习，但是我也不是那么喜欢课外班。考试本应该是比较受到同等教育的学生的学习成果的行为，课外班、补习班的存在打破了这一平衡，也打破了学生们投入到素质教育的时间的上限。通过放假时间上课来获取更加优秀的成绩，我认为这是一种恶性竞争。</p><p>好事是这种恶性竞争几年后就会被明令禁止。我不禁嫉妒起未来的小弟弟小妹妹们，他们可以傻乎乎地在这烈日之下自由地奔跑嬉戏、中暑晕倒。我摇了摇头，摆脱开这一想法。</p><p>10 年后的日子像鬼魂一样，曾时不时在我眼前出现。那段时间，我感觉自己像失去了灵魂的躯壳一样，浑浑噩噩，终日不知所措。对未来一无所知的人们反而成了我羡慕的对象。那种感觉过了一个月才渐渐消退。不如说，我学会了转移焦点。取而代之的是及时行乐的想法，与其忧虑注定到来的末日，还不如珍惜当下，多享受一番。</p><p>按照这个逻辑，我现在应该是在室内一边吹着空调，一边打着游戏的。我之所以冒着烈日来参加这个课外班，一个原因是家里没有游戏可以打，另一个原因则是这里有她在。</p><p>她——连雪是我的小学同学。她平易近人，虽然有点别扭，容貌——按照小学生的标准——算是不错的，而且成绩向来优秀。在除了成绩，就几乎没有什么好比的小学生眼里，她自然而然就成为了憧憬的对象，还是个小屁孩的我当然也包括在内。我的成绩？现在的话，算是不错啦。</p><p>闲话休提。可能是觉得难以接近的原因吧，虽然是同学，小时候的我却没怎么和她有过交集。对此我有那么一丁点，那么一丁点后悔：跟她的关系要是再好一点，就好了。不过对于过去的自己而言只可远观的她，对于现在的我来说，是不是就是容易接近的对象了呢？抱着这样的希望，我想着至少圆一下过去的遗憾，就这样来到了课外班所在的大楼。</p><p>这是一栋写字楼，接待处的大姐姐看到我脖子上挂着的名牌，便没有说什么。教室在6楼——我走进电梯，按下按钮。当门将要关闭的时候，我看到另外一个挂着名牌的身影正向电梯这里跑来。是她。我的心跳快了一拍，连忙按下开门按钮。她跑了进来，看到了我，便转向了电梯门，没有说话——。我从面板处退了一步，留出空间。巧也不巧，一个男人在电梯门再次关上之前，也跟了进来。男人按了5楼。</p><p>我瞥了她一眼，她像是在沉思，没有注意到我。5楼到了，男人走了出去，她突然也跟着走了出去。我叫住了她。“教室在6楼！”并按住开门键。她张望了一圈，听到我出声喊她，又走了回来。电梯门关上了。“走神了。”她小声说了一句。然后就没有再说话了，像是一副不高兴的样子，可能是因为出丑的缘故吧。</p><hr><p>下课后。看着一个人收拾书包的她，我不知从哪里涌上了勇气。我追上了她，问道，“一起回去吗？”</p><p>毕竟有一段是顺路，我心里在给自己找借口。</p><p>她瞅了我一眼。“随便。”漫不经心地回答道。</p><p>我们走在大楼和行道树的阴影之间。热气让我呼吸困难，知了在汽车的呼啸声中肆意聒噪。我莫名地想吃冰淇淋。香草味的大杯装。</p><p>“好热啊。”我像是在对自己说。她没有回应，像不觉得热似的。</p><p>一个拐弯之后，是一个长长的下坡。路面被太阳晒得发热，路两边稀疏地种着树， 在人行道上洒下零零落落的树荫。路上人影稀疏， 偶有汽车经过。我们一边聊着关于课外班的话题一边下坡。</p><p>下了坡，穿过一个小公园。公园里没有人。小公园没有滑梯和秋千，不过有一个沙坑。一座城堡矗立在那里。我下意识地走到沙城堡前。我突然有一种奇怪的感觉：这个沙堡将要融化，像初春的雪一样，变回沙子，落进池里。魔法的时间就要结束了。</p><p>连雪走在前面， 我跟在后面。快到她家门口的时候，她停下脚步，转过身来。</p><p>“今天过得很愉快。”她说道，脸上露出笑容。不像是平常的她的笑容。</p><p>“我也——”</p><p>钝器打击的声音。</p><p>我的意识就此中断。</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      <category domain="https://nir.moe/tags/ever17/">ever17</category>
+      
+      <category domain="https://nir.moe/tags/oregairu/">oregairu</category>
+      
+      <category domain="https://nir.moe/tags/narou/">narou</category>
+      
+      
+      <comments>https://nir.moe/posts/dreamdiary-07/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Reality can never imprison Dreams — Tetra World Adventure</title>
+      <link>https://nir.moe/posts/tetra/</link>
+      <guid>https://nir.moe/posts/tetra/</guid>
+      <pubDate>Thu, 13 Aug 2020 15:49:00 GMT</pubDate>
+      
+      <description>&lt;p&gt;Tetra World Adventure is a puzzle game by &lt;a href=&quot;https://twitter.com/bloom_mushroom&quot;&gt;Bloom Mushroom&lt;/a&gt;. Recently an enhanced version of it made its way to Nintendo Switch, but the mobile version has been around, free of charge. Since the Switch version is only available in Japanese store, I played the iOS version instead. It’s not that I don’t have the money to buy it. No. Not even close. I want to emphasize it is not the case.&lt;/p&gt;
+&lt;p&gt;It’s a short puzzle game with moderate difficulty. I’m no expert in puzzle games, and without hints this game took me 2 hours to beat. If you are looking for a nice and relaxing otherworldly adventure, feel free to pick up this game. For free.&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>Tetra World Adventure is a puzzle game by <a href="https://twitter.com/bloom_mushroom">Bloom Mushroom</a>. Recently an enhanced version of it made its way to Nintendo Switch, but the mobile version has been around, free of charge. Since the Switch version is only available in Japanese store, I played the iOS version instead. It’s not that I don’t have the money to buy it. No. Not even close. I want to emphasize it is not the case.</p><p>It’s a short puzzle game with moderate difficulty. I’m no expert in puzzle games, and without hints this game took me 2 hours to beat. If you are looking for a nice and relaxing otherworldly adventure, feel free to pick up this game. For free.</p><span id="more"></span><h2 id="A-Little-Discursion">A Little Discursion</h2><p>By the way, it took me some effort to find out the maker of the game. Appstore says the developer is norihiro hanazono, but a search of it leads me to some game news site instead of the author themself. Then I opened the in-game credits, only to be surprised that the author is not there. When I was about to give up, I noticed the signpost in main menu, which was like</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-----------</span><br><span class="line">|Bloom App|</span><br><span class="line">|mash room|</span><br><span class="line">-----------</span><br></pre></td></tr></table></figure><p>The mysterious text struck me with awe. Google says Bloom is the name of an app that helps you sleep and meditate, and another app that helps you create melodies by tapping circles. But the link between mindfulness, circles and this little puzzle game is yet unknown.</p><p>Also I was wondering what a “mash room” is for. Maybe it’s a little room in a factory downtown. Workers are streaming in and out with wood bats over their shoulders. They mash things there: they mash potatoes, tomatoes, and radios. The mash is made into salads and sold countrywide. The first line the workers say when picking up a phone is “mash mash”.</p><p>Anyway, this led me to the author’s twitter, and I linked it above.</p><h2 id="Plots-and-Mechanics">Plots and Mechanics</h2><p>The game is a point-and-click adventure. Each door in the main menu represents a stage, and in each stage, you travel between rooms, grab tools and items to solve the puzzle.</p><div class="figure fig-33" style="width:;"><a class="fancybox" href="https://res.cloudinary.com/noirgif/image/upload/v1597352345/tetra_aytkmv.png" title="Image from Google Play" data-caption="Image from Google Play" data-fancybox="default"><img class="fig-img" src="https://res.cloudinary.com/noirgif/image/upload/v1597352345/tetra_aytkmv.png" alt="Image from Google Play"></a><span class="caption">Image from Google Play</span></div> <p>This game doesn’t have a lot of items, and they don’t interact with each other. And the main difficulty comes from inputting the code. The player should look around carefully for clues that corresponds.</p><p>For example, in the beginning of the game, the player has to solve a puzzle made up of five sliders. Each slider has two states: up or down. And in the same room, we find out that the fish hanging on the wall has exactly five bones pointing up and down, and entering their direction solves the puzzle.</p><p>As the player ascended to the top of the tower, there’s a girl quietly standing there, writing in a book. It turns out this magical world is the girl’s creation. Her vivid dreams.</p><p>As the player progress through the game,  puzzles become more and more complex. In a stage, the player needs to enter three code correctly to obtain a key. In another stage, they need to count fishes of each type, and multiply the counts by their price to get the final result. Some earlier puzzles may come back, but with a twist. Take the fish bone puzzle in World 1 for example, it comes back in World 4. However, unlike in World 1, the number of bones exceeds the digit of the code. Therefore the player must find out which bones are related to the code, and which are not.</p><p>When the player finishes World 4, expecting to find the girl, what greets them is her sudden disappearance. And the story behind the story slowly reveals. I will save the fun for the play here. But be prepared for the story that carries a tinge of sadness. If you’ve listened to Prisoner / Paperplane(a series of vocaloid songs), you will feel familiar with the plot.</p><h2 id="The-End">The End</h2><p>I’ve always wanted to be lost in imagination. The azure sky. The tall grass. The ray of sunshine. A shelter from reality. However, as time goes, I find my self getting lost in everyday sundries, in sensual excitements — I am losing my self in reality. Just like a breeze flowing through the wind bell. Tetra reminds me of that. I felt myself liberated, like the bird, flapping its wings, to the end of the sky.</p><p>Thanks Bloom Mushroom for the fantastic journey. And if you read this article and enjoyed the game, it is my highest pleasure.</p><p>Edit: I played the slide princess by the same author, and that is also a nice puzzle game with some secrets and suprises.</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      <category domain="https://nir.moe/tags/game/">game</category>
+      
+      <category domain="https://nir.moe/tags/meta/">meta</category>
+      
+      <category domain="https://nir.moe/tags/puzzle/">puzzle</category>
+      
+      
+      <comments>https://nir.moe/posts/tetra/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>心脏和人偶 —— 心臓と絡繰</title>
+      <link>https://nir.moe/posts/shinzou-to-karakuri/</link>
+      <guid>https://nir.moe/posts/shinzou-to-karakuri/</guid>
+      <pubDate>Wed, 20 May 2020 01:04:57 GMT</pubDate>
+      
+      <description>&lt;p&gt;这是一首 Kanzaki Iori 作曲作词，花谱（Kaf，花譜）演唱的曲子。 Kanzaki Iori （原名是全用片假名的），就是那个，那个 vocaloid P主，那首《被生命所厌恶。》（命に嫌われている。）&lt;/p&gt;
+&lt;p&gt;《被生命所厌恶。》针对的是一种轻视生命的行为，一种表面上重视、实际上却拿生命在开玩笑的行为。轻视生命的我们“被生命本身所厌恶”。唱着无论如何也要活下去，忍耐着、挣扎着、笑着、背负着活下去。这样的歌。因为歌词十分直白，所以比较好懂。&lt;/p&gt;
+&lt;p&gt;写这篇的理由是因为感觉我听的日语歌里，各种修饰性的语言频发，有点像村上春树的小说，有点让人抓不住头脑。所以如果，。这次想要介绍的《心脏和人偶》，虽然不是像《被生命所厌恶。》那么直白，但也是挺好懂的一首歌，当作起手式可能正好。我不是职业的音乐人，也做不出高深的分析，也不敢自称说的都是对的，再怎么说，这也只是我个人的理解。但如果这篇文章能让读者对这首歌本身、Kanzaki、抑或是花谱感到一点点兴趣，那就是我的荣幸。&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>这是一首 Kanzaki Iori 作曲作词，花谱（Kaf，花譜）演唱的曲子。 Kanzaki Iori （原名是全用片假名的），就是那个，那个 vocaloid P主，那首《被生命所厌恶。》（命に嫌われている。）</p><p>《被生命所厌恶。》针对的是一种轻视生命的行为，一种表面上重视、实际上却拿生命在开玩笑的行为。轻视生命的我们“被生命本身所厌恶”。唱着无论如何也要活下去，忍耐着、挣扎着、笑着、背负着活下去。这样的歌。因为歌词十分直白，所以比较好懂。</p><p>写这篇的理由是因为感觉我听的日语歌里，各种修饰性的语言频发，有点像村上春树的小说，有点让人抓不住头脑。所以如果，。这次想要介绍的《心脏和人偶》，虽然不是像《被生命所厌恶。》那么直白，但也是挺好懂的一首歌，当作起手式可能正好。我不是职业的音乐人，也做不出高深的分析，也不敢自称说的都是对的，再怎么说，这也只是我个人的理解。但如果这篇文章能让读者对这首歌本身、Kanzaki、抑或是花谱感到一点点兴趣，那就是我的荣幸。</p><span id="more"></span><h2 id="原曲PV">原曲PV</h2><iframe width="560" height="315" src="https://www.youtube.com/embed/hcm1LGOxJbc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>（也放上播放数比较少的 <a href="https://www.bilibili.com/video/BV1cJ41187UD">B 站版本</a>）</p><p>花谱的PV通常都是正方形的画面，或许这和经常需要给花谱一个肖像有关。在这一点上，用方形画面也许比用 4:3 ， 16:9 的更好。另一方面，由于PV经常出现的是花谱在一些实景——地下通道、交叉口、公园等等，用方形的画面，或者更进一步， 3:4 的画面，应该能更让人想象这是用手机拍下的影像。这样，更有一种贴近观众的感觉。毕竟花谱算是虚拟偶像，贴近显示屏这一端的人，对虚拟偶像来说算是一种感觉上的加分点吧。</p><p>闲话休提，进入正题。</p><h2 id="这首歌在说些什么？">这首歌在说些什么？</h2><p>我们从歌曲名开始。毕竟歌曲名不是白起的，曲名往往提示了整首歌的主题，就像文章的标题一样。<del>虽然我上篇文章的标题和内容毫无关系。</del></p><p>人偶，这里日语原文是絡繰，指由机关驱动的装置。其实本身并不特指机关人偶，而是泛指日本那个时代的所有的用类似原理驱动的装置。但是这里是在描述人，所以为了方便，我就直接用人偶代称。如果看完 MV ，脑海里能浮现发条人偶的模样的花谱，应该就差不多了，233。</p><p>心脏应该也不是指字面上的器官，而是代指人的感情。按照我们现有的只是，大脑才是思考和感情产生的器官，但是奇妙的是，在说话的时候，大脑往往和人的智力联系起来，而心脏成为了人的感情的代名词：“没有脑子”被用来形容人愚笨，而“没有心”则是在形容人冷血。不过汉语里，不仅是心，很多其他器官——肝、胆、肠、肺——也具有象征意义。</p><p>人偶当然不可能有感情——它只会按照固定的模式行动。所以读到这里，就可以大胆猜想这首歌可能是在说人偶怎么没有感情，也可能是在说人偶怎么获得感情。</p><p>这首歌描述的是后者。让我想起类似的有一首歌叫《Near》（日语原名 ニア），是人类将近灭亡的背景下，一个人不停地向机器人 Near 问问题，直到自己生命的最后一天，的故事。</p><p>那知道了这首歌的主体，我不免想，换一个名字怎么样？</p><p>不用心脏(shinzo)，只说心(kokoro)，怎么样。不用机关人偶（karakuri），而用提线人偶、机器人，怎么样。</p><p>感觉上，用心脏两个字能够和人偶对称，但语言上的对称其实不明显：心脏和人偶都是4个假名；心脏是音读，人偶是训读。改成心和人偶，好像也没有什么大的差别。</p><p>机关人偶的话，很久很久以前有一个叫 40mP 的 vocaloid P主（这是这篇文章提到过的第二个 vocaloid P主）创作过一首名叫《活动小丑》的歌。歌曲名直译就是机关小丑。不过，《活动小丑》比喻自己被耍的团团转，来表达失恋时的痛苦。机关人偶，既比提线的主动——只要有能量输入就可以自行运动而不是靠人去操控，又不如机器人自由——固定的，没法学习。不如说现在的机器人越来越万能了，直接说机器人会给人一种十分聪明的人形机器人的印象。在这种意义上，机关人偶应该算是比较合适了。</p><p>刚才忘了说，这里的机关人偶，可以算作是 automata。（是不是想起了某部机器人拥有了感情、并寻找自己存在意义的游戏？ ）从这种含义上说，可以与人偶互换，从平衡上来说，应该不行—— automata 片假名写出来要占五个全角字符。</p><p>从题目确立了主旨，歌词就应该围绕这个题目解析。</p><h2 id="歌词">歌词</h2><blockquote><p>優しさも仕草も何もかも嘘でも</p><p>思うように信じたものを選ぼう</p></blockquote><p><em>就算温柔和举止都只是欺骗人的谎言，也要选择自己相信的事物。</em></p><p>上来就大打抽象牌，让人很崩溃，但是这句话过去之后就好很多了。大概。</p><p>首先，温柔的行为和举止的主体是谁，客体是谁？客体应该是“我”，即人偶；那主体理应是别人。那上半句话就可以翻译成：即使别人温柔待我是出于谎言而不是真心。</p><p>这里应该是感叹人的表里不一。不过，会压抑自己，才是理智的、像人的表现。理所当然地，“我”无法理解这种像人的表现，毕竟是人偶。</p><p>与怀疑相对应的就是相信。选择自己相信的东西，是不是指成为人呢，就不得而知了。</p><hr><blockquote><p>戸惑いだって有るよ</p><p>それでも教えてよ</p><p>この雨の解答を見せて</p></blockquote><p><em>也是有困惑的事的，即便如此也教会我吧，给我看这场雨的答案。</em></p><p>我错了，并没有好很多。</p><p>谁会困惑？“我”。润色一下就是：“我”虽然是“人偶”，但我也会困惑。だって表示列举，表示困惑只是“我”仍有的感情中的一种。</p><p>但是这样一来，之后突如其来的转折让我很困惑。祈使句的句式能告诉我们一些信息：谁教？“你”。教谁？“我”。教什么？下文“雨的答案”。</p><p>雨的答案是什么先放一边。按照常理，我有疑问，给我解惑，这两件事应该是自然而然的关系，而不是转折关系。相反的情况才应该是转折：我没有什么好疑惑的，但是还是教给我这场雨的答案吧。</p><p>仔细一想，这句应该是说：虽然“我”无法理解你所说的东西（因为是人偶），但我还是想听你告诉我这场雨的答案。</p><p>这场雨的答案是什么？千言万语化作三个字：不知道。我唯一知道的是，“雨”可以换成其他任何现象，彩虹、风、海浪、钟声。什么都可以，因为雨并不是特指什么东西。问题不是什么实在的问题的话，答案也自然不是什么实在的事物。比如，雨的答案并不是大气中的水蒸汽遇冷凝结成水滴当气流承受不住水滴的重量的时候就会落至地面。既然需要别人来教，那“我”肯定不懂，不懂的东西才需要教。</p><p>什么东西“我”不懂？人。因为“我”是人偶。所以这里表面是在说某种自然现象，实际上应该是代指人的、社会的某种行为，或者是从“人”的角度的对某种事物的理解和想法。</p><hr><blockquote><p>嵌めては崩してを繰り返して</p></blockquote><p><em>重复着放入和打散</em></p><p>这里和B段的“无法契合的拼图”相对应，都应该是把什么东西比作拼图。这里指在重复地拼入和打散。既然在重复打散，就说明“我”不会拼这个拼图。什么“我”不会的东西被比作了拼图？应该是和上文雨的解答一样的东西。</p><hr><blockquote><p>この傷もこの涙も</p><p>この気持ちは全部私のものだ</p></blockquote><p><em>这道伤痕，这些眼泪，这种感觉，都属于我自己</em></p><p>高潮部分的高潮部分。我感觉很难说清楚，就靠感觉吧。</p><hr><blockquote><p>少ない脳で答えを知った</p><p>仕掛けられた罠に揺れ動いた戸惑いも繰り返し</p><p>恋をしてみよう</p><p>君の優しさの全てが嬉しかったんだ</p></blockquote><p><em>用我愚笨的脑子得到了答案，在被设下的陷阱中摇动，反复困惑之后，尝试去恋爱吧。你温柔的一切都让我喜悦万分</em></p><p>第二局是在形容“我”挣扎着想要摆脱陷阱，具体动作可以翻译成摇动、晃动、抖动。</p><p>“我”笨，这个不用说。“我”是“人偶”，有很多不理解的事情。知道答案了，可能在照应上文“雨的答案”，知道这个答案，就等于“我”离“人”又近了一步。</p><p>但这里的“陷阱”是什么？这是我认为歌中数一数二抽象的地方了。</p><p>kotobank 上说：陷阱是用于捕获鸟兽和鱼的装置。比如用饵诱入笼中，或者用落穴困住，等等。另外，落穴中可能也有刺。所以总结一下，陷阱有两个特点：1. 困住猎物，这是最主要的功能；2.伤害猎物，使其无法逃脱，有的陷阱是这样。所以我深陷陷阱，应该是指我处于某种难以摆脱的、不方便甚至是有害的状态下。周围的人都谎言以对，可以说是陷阱；不懂人心，也可以说是陷阱。</p><p>其次，得到答案和挣脱陷阱并列，说明这两个动作有关联。从某种程度上，这也说明不懂“人心”的状态约等于在陷阱中的状态。</p><p>顺便一提，第二段高潮段也提到了陷阱。我们姑且认为全文所指的陷阱都是同一个陷阱。第二段高潮段关于陷阱的描述是：</p><blockquote><p>仕掛けられた罠を振りほどいたその先に</p><p>呆れ顔の君が待っていた</p></blockquote><p><em>摆脱了被设下的陷阱之后，有满脸惊讶的你在等着</em></p><p>由此可见，整首歌歌唱的是“我”摆脱陷阱的过程。也可以说是“我”获得感情的过程。</p><p>所以，“尝试去恋爱吧”，是不是像白雪公主的故事一样，有种恋爱使人从麻木中醒来的美好愿望呢？</p><hr><p>间奏。</p><p>MV 里花谱在公园里流连。</p><p>我最近有印象的是将近两年前，在芝加哥逗留期间去过的一个叫 spruce park 的公园。公园没有什么人，秋千，滑梯就静静地躺在树荫下，铺着树皮碎屑的地面上。我坐上去摇晃了几下。</p><p>之后突然发现告示牌上写着只许儿童坐，于是我赶紧四周张望，确认没有人看这边，才重新坐了上去。又摇晃了几下，才满意地走了。</p><hr><blockquote><p>後悔や痛みの夜を何度明かして</p><p>当たり前になったのは君のこと</p><p>罠だらけの日々を歩けない私の</p><p>手を引いて歩く横顔</p></blockquote><p><em>经过多少次充满后悔与痛楚的夜晚，你的存在已经成为理所当然</em></p><p><em>在陷阱四布的每日中无法前进的我，拉着我的手前进的侧脸</em></p><p>第二段着重描绘“你”怎么带着我走出困境，这也是“我”恋爱的一个理由吧。首先，“你”陪伴我渡过多少痛苦的夜晚。其次，“你”拉着我的手在陷阱中前进。</p><p>“理所当然”听起来有点像把“你”当作是一个工具人了，不过换个说法，就是没想过不存在的可能。对，一定是这样。</p><hr><blockquote><p>ぶつかり合って重ならないパズルが</p><p>最後のピースをやっと見つけた</p></blockquote><p><em>互相冲突，无法堆叠的拼图</em></p><p><em>终于找到了最后的一块</em></p><p>这里用的是 puzzle ，指谜题，或者是解谜的玩具。形式上，可以是拼图，也可以是积木。这里要叠的话，或许更接近积木。</p><p>具体含义是：本来没法拼的积木，在“你”的帮助下，终于找到了最后一块。</p><p>积木是什么？由主题来推断，积木是雨的答案，是心脏，是让人偶成为真正的人的关键。它的最后一块，就是爱。</p><p>如果玩过《魔女之泉3》，就知道这部游戏里也出现过类似的桥段：主人公本来是神创造出来的玩偶，为了成为其降临的容器。而这需要她获得各种感情，最后，当她获得爱的时候，作为一个容器才完整。</p><hr><blockquote><p>すれ違う心の奥底で</p><p>ずっと探してた優しさは</p><p>温りは何もかも全部君のものだ</p></blockquote><p><em>在彼此错过的心底里，一直在寻找的温柔、温暖、其他一切都属于你</em></p><p>すれ違う表示互相从对方的旁边通过，向不同的方向前进，或是各自的想法无法沟通。错过应该和上文的背叛和心碎相关（没有翻译）。也有可能是指“我”获得了自我，因此走上和“你”不同的道路。</p><p>我个人比较喜欢这种“细数回忆，那些最珍贵的都和你在一起”的感觉。</p><hr><p>摆脱了陷阱之后，就是深情的表白和誓言，“在这之后，我也想继续守护你”。</p><p>同时也表达了获得“心脏”的快乐：“你的一言一语和迷惑不解都使我万分喜悦。”</p><h2 id="这首歌为何而写？">这首歌为何而写？</h2><p>这里只是我的一些理解，就当作是茶余饭后的玩笑话，不用当真。</p><p>这是 Kaf 的第二首原创曲，作为主打唱歌的 vtuber，歌曲的内容也关系着歌手的形象。Kaf 在唱歌的时候十分投入，“真真正正把歌变成自己的”，对这样的 Kaf 来说，一首饱含感情的歌非常适合。</p><p>另外，vtuber 很大程度上也是在演绎一个角色——所谓设定。比如傲娇班长、女仆等等。通过《心臓と絡繰》，Kaf 或许是在像世界表达自己不是一个角色，而是一个有血有肉的人吧。</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/commentary/">commentary</category>
+      
+      
+      <category domain="https://nir.moe/tags/kaf/">kaf</category>
+      
+      <category domain="https://nir.moe/tags/vtuber/">vtuber</category>
+      
+      <category domain="https://nir.moe/tags/kanzaki-iori/">kanzaki iori</category>
+      
+      <category domain="https://nir.moe/tags/song/">song</category>
+      
+      
+      <comments>https://nir.moe/posts/shinzou-to-karakuri/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>我都写了些什么东西</title>
+      <link>https://nir.moe/posts/posts-explained/</link>
+      <guid>https://nir.moe/posts/posts-explained/</guid>
+      <pubDate>Sun, 19 Apr 2020 01:13:07 GMT</pubDate>
+      
+      <description>&lt;p&gt;虽然这个博客里的文章基本上都是凭兴趣写的，但是我也非常高兴有人来看。在这里我想讲解一下，我写了什么东西，抑或是为什么写的，如果这样能够增加各位读者的理解，或是对这些文章提起哪怕一丁点的兴趣，那也是我的荣幸。&lt;/p&gt;
+&lt;p&gt;梦日记并没有解说，这点就像《梦日记》一样。&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>虽然这个博客里的文章基本上都是凭兴趣写的，但是我也非常高兴有人来看。在这里我想讲解一下，我写了什么东西，抑或是为什么写的，如果这样能够增加各位读者的理解，或是对这些文章提起哪怕一丁点的兴趣，那也是我的荣幸。</p><p>梦日记并没有解说，这点就像《梦日记》一样。</p><span id="more"></span><h2 id="4-月-1-日吉日">4 月 1 日吉日</h2><p><a href="/posts/april-1st-is-a-good-day/">本文链接</a></p><p>三人成虎的典故大家都听说过，那么反过来是什么样子呢？当大家都不相信的时候，会不会使得本人也渐渐怀疑自己？这篇博客就是在讲述这样一个故事。</p><p>不过在故事里，还多了一个限制，就是魏莱是做梦梦见世界毁灭的，而梦里的记忆随着时间流逝在急速地消失。而到第二天，这份记忆就完全消失了。</p><p>#workshop，也就是《茸雪》（这里有一篇《茸雪》的（英文）随想，感兴趣的可以），《梦末》的开发，上个月出了系列的第三作《昙花》，但我才玩了前几章。《昙花》的主角也是一种患了奇妙的病，使得他非常健忘：生活、朋友、以及一切。他唯一印象深刻的是他在学校撞上的女主。后面……就不知道了。</p><p>吉日其实没有什么特殊含义。其实某种含义上每天都是黄道吉日，不过在吉日宣告世界毁灭，是不是有点突兀呢？如果有就好了。</p><h2 id="某一个冬日的下午">某一个冬日的下午</h2><p><a href="/posts/winter-afternoon/">本文链接</a></p><p>讲述了我为什么想喝热可可，又不想喝的故事。</p><h2 id="恋爱喜剧害死人">恋爱喜剧害死人</h2><p><a href="/posts/lovecome-kills/">本文链接</a></p><p>看恋爱喜剧轻小说的时候，会不会经常想：</p><p>这个女角也太好骗了吧。</p><p>又有新后宫了。</p><p>诸如此类。这是不是对人性的扭曲？对人权的侵害？如果是，那如果把主人公这一特异点去除，是不是就会解决问题？这篇博客就是在做这样的尝试。</p><h2 id="A-Paper-Plane-to-the-Past">A Paper Plane to the Past</h2><p><a href="/posts/paperplane">本文链接（英文）</a></p><p>其实是橘子班的《12色的季节》的随想。在游戏里，纸飞机成为了穿越时空的媒介，也让错过的男主和女主重新相会。</p><p>玩了游戏的读者，是否会感觉章节的顺序其实也是一种暗示？如果有类似的感觉那我会非常高兴。</p><h2 id="My-Story">My Story</h2><p><a href="/posts/my-story">本文链接（英文）</a></p><p>这一篇其实是《你的故事》评论的预告一样的文章，虽然《你的故事》的评论 4 个月之后才出。感觉 n-buna 的歌《白雪》给了这篇文章很大影响，不如说这篇文章像是在进行《白雪》里的心理描写。</p><p>这里也贴一个<a href="https://www.youtube.com/watch?v=oAVDdEfiy4o">原曲的链接</a>。</p><p>原曲是“我”在饮下毒药之前回忆起的，遇到的“你”的故事。“如果再努力一点去寻找你的话，是不是就能再踏出一步了呢。”在《你的故事》里面，也有类似的桥段。千寻从人群中看见久别的青梅竹马的脸庞，满心欢喜地前去寻觅，最后却是认错人。这一天下着暴雨。失意的他找到一个居酒屋，把自己灌醉。</p><p>如果听了这首歌，或是能够对《你的故事》有那么一点兴趣就好了。</p><h2 id="Last-Day">Last Day</h2><p><a href="/posts/last-day">本文链接（英文）</a></p><p>这一篇其实是《景之海的 Apeiria》的预告。我努力描绘主角零一最后前往边界之塔，去结束一切的场景。最后一日的标题由此而来。</p><p>因为打完游戏也是两年多以前的事情了，所以细节我只是依稀记得。但《景之海》可以说是我打的为数不多的黄油里剧情我非常喜欢的一部作品了。</p><p>时间的回溯是游戏里反复出现的一个因素——在每一条线里，零一要去解决女主人公的问题，而他的最终目标则是打倒观察者(Observer)，救回 Aperia，但前几次都因为某种原因而失败，导致时间回溯。从结构上来说，《景之海》非常类似《命运石之门》。</p><p>不过不像《命运石之门》的是，所有的悬念是在最后一口气解开，而且世界观其实也非常不同。</p><p>当你在窥视屏幕的时候，是否有一个人在屏幕之外观察着你？</p><p>虽然是我个人的品味（我比较喜欢有 meta 的作品），但是如果能引起共鸣那将是我的荣幸。</p><h2 id="Compile-Heart-Busted">Compile Heart, Busted</h2><p><a href="/posts/compileheart">本文链接（英文）</a></p><p>这是前年愚人节写的东西。那时候 Compile Heart 刚公布《勇者 Neptune（假定标题）》，将是一个由加拿大的工作室做的一个 2D RPG。</p><p>如果有哪位读者想玩——我也不拦就是了，毕竟我也没有玩。</p><h2 id="Memories-Off">Memories, Off</h2><p><a href="/posts/memory">本文链接（英文）</a></p><p>标题取自秋之回忆（告别回忆）系列。当时 MO8 中文版的众筹刚刚结束，而 PC 版直到今年 4 月才上 Steam，可以说是物是人非了。</p><p>主要联系了几部作品——《我在7年后等着你》（游戏），《图书迷宫》（轻小说）和什么来着。</p><p>和《我不知道的恋爱喜剧》（轻小说）。</p><p>《图书迷宫》是 meta 的集合体。主人公不知为何失去了记忆，他能记住的，就只有写在一本名叫《最后的祈愿》的笔记上写下的内容。他只能依靠这本笔记，和在图书迷宫中发现并同行的吸血鬼女王亚历山德莉亚（抱歉，但这确实不是女性名字，我尽力了），尝试解开 5 年之前，自己的父亲被杀的谜团。</p><p>而在《我不知道的恋爱喜剧》中，主人公拥有穿越时空的能力，他一穿越，突然就有辣妹女朋友了，再一穿越，又没了。这样的故事。</p><p>两部轻小说都是比较挑读者的类型，所以如果有碰巧喜欢这两本书的同好，我会非常高兴。</p><h2 id="虫子">虫子</h2><p><a href="/posts/worms">本文链接</a></p><p>不用想也知道，这是 DDLC/心跳文学部的预告。但内容，正如后面写的一样，是在描绘出汗后浑身瘙痒的感觉。</p><p>如果看过纱世里在文化节上发表的那首诗，就会明白为什么会变成这样了。</p><h2 id="一刀9999级的世界">一刀9999级的世界</h2><p><a href="/posts/9999-chicks-for-a-dollar">本文链接</a></p><p>这可能是这个博客里所有搞笑玩意的起点了。</p><p>一刀 9999 级，魔法适应性 9999。难道 9999 就是最大的数字了吗？</p><p>在有些游戏里会有满级。比如《怪物猎人：世界》，满级是 999 级。在《女神异闻录5》里，满级是 99 级。Undertale 里这个数是 20 。在这些游戏里，或许是。但用一个不是游戏脑的，一般人的大脑去思考，9999 明显不是极限。</p><p>有没有可能给玩家送 9999 级是骗人的，一进游戏一看，里面都是像点击游戏里一样用 aa bb cc dd ee 来标记的等级的怪物？</p><p>文内的场景来自于旷野之息，但我不清楚那时候我有没有玩过游戏。如果看这一篇文章能够让眼镜因为超高的战斗力而炸掉，那将是我的荣幸。</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      <category domain="https://nir.moe/tags/writing/">writing</category>
+      
+      
+      <comments>https://nir.moe/posts/posts-explained/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>4月1日吉日</title>
+      <link>https://nir.moe/posts/april-1st-is-a-good-day/</link>
+      <guid>https://nir.moe/posts/april-1st-is-a-good-day/</guid>
+      <pubDate>Wed, 01 Apr 2020 02:21:34 GMT</pubDate>
+      
+      <description>&lt;p&gt;20XX年4月1日吉日，魏莱从睡梦中惊起——他成为了一个有秘密的男人。&lt;/p&gt;
+&lt;p&gt;他伸手摸了摸被子——干的。他松了口气，为没有又增加了另外一个秘密而感到庆幸。但他随即意识到，现在不是放心的时候。&lt;/p&gt;
+&lt;p&gt;他从未来穿越到现在，而在未来，人类将迎来末日。&lt;/p&gt;
+&lt;p&gt;20XZ年，不明生物入侵地球。这种生物所过，寸草不生，而对人类来说，就算短暂的接触，也足以致命。几年以后，生物扩散至大半的地球。由于音讯不通，魏莱不知道其他地方的情况，但他所在的避难所只剩寥寥十数人。&lt;/p&gt;
+&lt;p&gt;但即使如此，人类也没放弃最后的希望——他们开发了能够将信息传送到过去的自己的装置，魏莱就是其实验者之一。&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>20XX年4月1日吉日，魏莱从睡梦中惊起——他成为了一个有秘密的男人。</p><p>他伸手摸了摸被子——干的。他松了口气，为没有又增加了另外一个秘密而感到庆幸。但他随即意识到，现在不是放心的时候。</p><p>他从未来穿越到现在，而在未来，人类将迎来末日。</p><p>20XZ年，不明生物入侵地球。这种生物所过，寸草不生，而对人类来说，就算短暂的接触，也足以致命。几年以后，生物扩散至大半的地球。由于音讯不通，魏莱不知道其他地方的情况，但他所在的避难所只剩寥寥十数人。</p><p>但即使如此，人类也没放弃最后的希望——他们开发了能够将信息传送到过去的自己的装置，魏莱就是其实验者之一。</p><span id="more"></span><hr><p>魏莱自己也觉得这件事有些过于超现实。但鲜明的记忆让他不得不相信确有其事。</p><p>不清楚和一起发送超时空消息的人们都怎么样了，他想。他甚至不知道那些同伴现在都在哪里。在那时候，谈论过去的事与揭伤口无异。魏莱开始后悔了，当时他应该要一两个人的家庭住址的。</p><p>到学校去碰碰运气吧，魏莱看了下表，现在是还是凌晨，想了想，有充足的睡眠才有精力找人，他又躺下了。</p><hr><p>魏莱的好友金日找上了他。</p><p>“你知道吗？语文老师生病了，下节课自习！”金日洋洋得意地说道。或许是因为他们的语文老师作为班主任，经常带头占课；不过更有可能是因为金日昨天被叫到办公室臭训了一通，今天终于出了口恶气。</p><p>不过魏莱没放在心上，他在想他的那些同伴是不是会占领学校的广播站，用奇怪的摩斯电码，报导这一消息。</p><p>“你怎么啦？”直到金日在眼前摇晃手，他才回过神来。</p><p>“有件事跟你说，”魏莱抬起头。</p><p>“什么啊？”</p><p>“其实，人类就快濒临灭绝了。”</p><p>“哦。然后呢？”</p><p>“所以翘个一两节课也肯定没事。”</p><p>“哈哈，别当真，刚才骗你的。”</p><p>魏莱叫住了打算继续用这个把戏骗其他同学的金日。</p><p>“我是认真的，我有未来的记忆。”</p><p>魏莱大致讲述了本文第一节的内容。他没有提及被子是干的。</p><p>“我看你可能是做了一场梦，就当真了。你说的要是真的，要不试着联系联系那些同伴？如果你不是一个人回来的话。”金日叉起了腰。魏莱没有修正“回来”一词的用法。</p><p>“可我没有联系方式。”</p><p>“那你说什么。你去网上碰碰运气呗？搞不好他们也在找你呢。”</p><p>魏莱觉得有道理，午休时间偷偷摸进学校的机房，用午餐的时间，草草地写了一篇文章，放到了网上。</p><p>等他放学，饿着肚子又摸进机房看情况的时候，遗憾地，这篇文章没有一个人回应。大家或许都把这当成蹩脚的愚人节笑话了。</p><p>魏莱自己都开始觉得这事情有点不靠谱了。</p><p>魏莱觉得自己并不是那种好主动行动的人。他决定等同伴中的某个人上了新闻（他们肯定会这样联络自己），就去找他们。</p><p>“今天就先这样吧。”他对自己说。</p><hr><p>一觉醒来，魏莱感觉自己忘记了什么事情。</p><p>“妈，昨天是什么日子？”他不抱希望地问到。</p><p>“昨天？不知道。”</p><p>翻看自己家的老黄历，今天是4月2日，昨天是4月1日，宜祭祀。</p><p>“靠，昨天忘记恶搞了。”他想。</p>]]></content:encoded>
+      
+      
+      <category domain="https://nir.moe/categories/writing/">writing</category>
+      
+      
+      <category domain="https://nir.moe/tags/april-fool/">april fool</category>
+      
+      
+      <comments>https://nir.moe/posts/april-1st-is-a-good-day/#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>
